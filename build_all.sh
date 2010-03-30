@@ -14,9 +14,11 @@ gstpy_version=0.10.12
 glib_version=2.22.5
 libxml2_version=2.7.7
 libiconv_version=1.13.1
+liboil_version=0.3.17
 gettext_version=0.17
 #gstreamer_git_tagname=NELARELEASE-0.0.1
 gstreamer_git_tagname=RELEASE-0.10.28
+gstbase_tag=RELEASE-0.10.28
 
 prefix=$(pwd)/build
 srcdir=$(pwd)/src
@@ -96,7 +98,9 @@ get_and_build     libiconv   $libiconv_version      "$CONFIGURE_BASE_OPT"
 get_and_build     gettext    $gettext_version       "$CONFIGURE_BASE_OPT"
 get_and_build     glib       $glib_version          "$CONFIGURE_BASE_OPT"
 get_and_build     libxml2    $libxml2_version       "$CONFIGURE_BASE_OPT --without-python" 
+get_and_build     liboil     $liboil_version        "$CONFIGURE_BASE_OPT" 
 gst_get_and_build gstreamer  $gstreamer_git_tagname "$CONFIGURE_BASE_OPT --enable-gtk-doc=no"
+gst_get_and_build gst-plugins-base  $gstbase_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no"
 
 
 #return to origin
