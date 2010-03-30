@@ -15,6 +15,8 @@ glib_version=2.22.5
 libxml2_version=2.7.7
 libiconv_version=1.13.1
 liboil_version=0.3.17
+libvorbis_version=1.2.3
+libogg_version=1.1.4
 gettext_version=0.17
 #gstreamer_git_tagname=NELARELEASE-0.0.1
 gstreamer_git_tagname=RELEASE-0.10.28
@@ -99,8 +101,10 @@ get_and_build     gettext    $gettext_version       "$CONFIGURE_BASE_OPT"
 get_and_build     glib       $glib_version          "$CONFIGURE_BASE_OPT"
 get_and_build     libxml2    $libxml2_version       "$CONFIGURE_BASE_OPT --without-python" 
 get_and_build     liboil     $liboil_version        "$CONFIGURE_BASE_OPT" 
+#get_and_build     libogg     $libogg_version        "$CONFIGURE_BASE_OPT" 
+#get_and_build     libvorbis  $libvorbis_version     "$CONFIGURE_BASE_OPT" 
 gst_get_and_build gstreamer  $gstreamer_git_tagname "$CONFIGURE_BASE_OPT --enable-gtk-doc=no"
-gst_get_and_build gst-plugins-base  $gstbase_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no"
+gst_get_and_build gst-plugins-base  $gstbase_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no --disable-ogg --disable-vorbis"
 
 
 #return to origin
