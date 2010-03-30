@@ -21,6 +21,7 @@ gettext_version=0.17
 #gstreamer_git_tagname=NELARELEASE-0.0.1
 gstreamer_git_tagname=RELEASE-0.10.28
 gstbase_tag=RELEASE-0.10.28
+gstgood_tag=RELEASE-0.10.21
 
 prefix=$(pwd)/build
 srcdir=$(pwd)/src
@@ -56,7 +57,7 @@ cd $srcdir
 # $1 library_name
 # $2 library_version
 # $3 configure extra options
-function get_and_build {
+function tar_get_and_build {
     base=$1-$2
     tar=$base.tar.gz
     src=$RESOURCE_URL_BASE/$tar
@@ -75,11 +76,11 @@ function get_and_build {
     fi
 }
 
-#gst_get_and_build
+#git_get_and_build
 # $1 library_name
 # $2 library_tag_name
 # $3 configure options
-function gst_get_and_build {
+function git_get_and_build {
     name=$1
     tagname=$2
     copt=$3
@@ -96,15 +97,16 @@ function gst_get_and_build {
     fi
 }
 
-get_and_build     libiconv   $libiconv_version      "$CONFIGURE_BASE_OPT"
-get_and_build     gettext    $gettext_version       "$CONFIGURE_BASE_OPT"
-get_and_build     glib       $glib_version          "$CONFIGURE_BASE_OPT"
-get_and_build     libxml2    $libxml2_version       "$CONFIGURE_BASE_OPT --without-python" 
-get_and_build     liboil     $liboil_version        "$CONFIGURE_BASE_OPT" 
-#get_and_build     libogg     $libogg_version        "$CONFIGURE_BASE_OPT" 
-#get_and_build     libvorbis  $libvorbis_version     "$CONFIGURE_BASE_OPT" 
-gst_get_and_build gstreamer  $gstreamer_git_tagname "$CONFIGURE_BASE_OPT --enable-gtk-doc=no"
-gst_get_and_build gst-plugins-base  $gstbase_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no --disable-ogg --disable-vorbis"
+tar_get_and_build     libiconv   $libiconv_version      "$CONFIGURE_BASE_OPT"
+tar_get_and_build     gettext    $gettext_version       "$CONFIGURE_BASE_OPT"
+tar_get_and_build     glib       $glib_version          "$CONFIGURE_BASE_OPT"
+tar_get_and_build     libxml2    $libxml2_version       "$CONFIGURE_BASE_OPT --without-python" 
+tar_get_and_build     liboil     $liboil_version        "$CONFIGURE_BASE_OPT" 
+#tar_get_and_build     libogg     $libogg_version        "$CONFIGURE_BASE_OPT" 
+#tar_get_and_build     libvorbis  $libvorbis_version     "$CONFIGURE_BASE_OPT" 
+git_get_and_build gstreamer  $gstreamer_git_tagname "$CONFIGURE_BASE_OPT --enable-gtk-doc=no"
+git_get_and_build gst-plugins-base  $gstbase_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no --disable-ogg --disable-vorbis"
+git_get_and_build gst-plugins-good  $gstgood_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no "
 
 
 #return to origin
