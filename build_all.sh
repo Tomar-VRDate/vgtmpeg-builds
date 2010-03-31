@@ -24,6 +24,8 @@ gstreamer_git_tagname=RELEASE-0.10.28
 gstbase_tag=RELEASE-0.10.28
 gstgood_tag=RELEASE-0.10.21
 gstffmpeg_tag=NELA_RELEASE-0.0.3
+encbin_tag=RELEASE-0.0.1
+gmttranscode_tag=RELEASE-0.0.1
 
 prefix=$(pwd)/build
 srcdir=$(pwd)/src
@@ -112,6 +114,8 @@ git_get_and_build gstreamer  $gstreamer_git_tagname "$CONFIGURE_BASE_OPT --enabl
 git_get_and_build gst-plugins-base  $gstbase_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no --disable-ogg --disable-vorbis"
 git_get_and_build gst-plugins-good  $gstgood_tag    "$CONFIGURE_BASE_OPT --enable-gtk-doc=no --disable-shout2"
 git_get_and_build gst-ffmpeg      $gstffmpeg_tag    "$CONFIGURE_BASE_OPT --disable-silent-rules" 
+git_get_and_build encodebin       $encbin_tag       "$CONFIGURE_BASE_OPT" 
+git_get_and_build gmt-transcode   $gmttranscode_tag "$CONFIGURE_BASE_OPT" 
 
 
 #return to origin
