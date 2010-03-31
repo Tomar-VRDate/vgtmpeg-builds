@@ -24,7 +24,7 @@ gstreamer_git_tagname=RELEASE-0.10.28
 gstbase_tag=RELEASE-0.10.28
 gstgood_tag=RELEASE-0.10.21
 gstffmpeg_tag=NELA_RELEASE-0.0.3
-encbin_tag=RELEASE-0.0.1
+encbin_tag=RELEASE-0.0.3
 gmttranscode_tag=RELEASE-0.0.1
 
 prefix=$(pwd)/build
