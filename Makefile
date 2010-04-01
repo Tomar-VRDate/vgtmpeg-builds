@@ -52,7 +52,7 @@ dobuild: $(MYBUILD)
 	git clone $($*_loc)/$$name; \
 	cd $$name; \
 	git checkout $($*_version); \
-	./autogen.sh $($*_opt); \
+	./autogen.sh -- $($*_copt); \
 	cd ..; \
 	fi; \
 	cd ..; 
