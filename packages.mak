@@ -95,7 +95,7 @@ gmt_transcode_gettype=git
 gmt_transcode_loc=$(GITREPO_BASE)
 gmt_transcode_copt=$(CONFIGURE_BASE_OPT) 
 
-ifeq ($NBUILD_TYPE, win32)
+ifeq ($(NBUILD_TYPE),win32)
 PKG= libiconv gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
 else
 PKG= gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
