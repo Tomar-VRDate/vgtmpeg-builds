@@ -63,7 +63,7 @@ gstreamer_version=RELEASE-0.10.28
 gstreamer_basedir=gstreamer
 gstreamer_gettype=git
 gstreamer_loc=$(GITREPO_BASE)
-gstreamer_copt=$(CONFIGURE_BASE_OPT) --enable-gtk-doc=no
+gstreamer_copt=$(CONFIGURE_BASE_OPT) --enable-gtk-doc=no --disable-loadsave --disable-examples --disable-tests --disable-check --disable-net
 
 gst_plugins_base_version=RELEASE-0.10.28
 gst_plugins_base_basedir=gst-plugins-base
@@ -95,4 +95,4 @@ gmt_transcode_gettype=git
 gmt_transcode_loc=$(GITREPO_BASE)
 gmt_transcode_copt=$(CONFIGURE_BASE_OPT) 
 
-PKG= libiconv gettext glib libxml2 liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
+PKG= libiconv gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
