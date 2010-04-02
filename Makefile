@@ -14,7 +14,7 @@ include buildcfg.mak packages.mak
 
 
 #support for config target
-CCOPT=$($(MODULE)_copt)
+CCOPT=$($(module)_copt)
 ifdef ccopt
 CCOPT += $(ccopt)
 endif
@@ -66,10 +66,20 @@ dobuild: $(MYBUILD)
 	fi; \
 	cd ..; 
 
-config: 
-ifdef MODULE
+modmake:
+ifdef module
 	set -e; \
-	cd $(srcdir)/$($(MODULE)_basedir); \
+	cd $(srcdir)/$($(module)_basedir); \
+	$(MAKE); \
+	cd ../..;
+else
+	@echo "module='module' not specified on command line"
+endif
+
+config: 
+ifdef module
+	set -e; \
+	cd $(srcdir)/$($(module)_basedir); \
 	./configure $(CCOPT); \
 	cd ../..;
 else

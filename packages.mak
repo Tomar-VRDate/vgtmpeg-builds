@@ -39,7 +39,7 @@ gettext_version=0.17
 gettext_basedir=gettext-$(gettext_version)
 gettext_gettype=tar
 gettext_loc=$(RESOURCE_URL_BASE)
-gettext_copt=$(CONFIGURE_BASE_OPT)
+gettext_copt=$(CONFIGURE_BASE_OPT) --enable-shared=no
 
 glib_version=2.22.5
 glib_basedir=glib-$(glib_version)
@@ -95,4 +95,8 @@ gmt_transcode_gettype=git
 gmt_transcode_loc=$(GITREPO_BASE)
 gmt_transcode_copt=$(CONFIGURE_BASE_OPT) 
 
+ifeq ($NBUILD_TYPE, win32)
 PKG= libiconv gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
+else
+PKG= gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
+endif
