@@ -22,6 +22,7 @@ dobuild: $(MYBUILD)
 
 .SECONDEXPANSION:
 %.build: %_$$($$*_gettype)
+	set -e; \
 	cd $(srcdir); \
 	cd $($*_basedir); \
 	$(MAKE); \
@@ -30,6 +31,7 @@ dobuild: $(MYBUILD)
 
 
 %_tar: makesrcdir
+	set -e; \
 	cd $(srcdir); \
 	base=$*-$($*_version); \
 	tar=$$base.tar.gz; \
@@ -45,6 +47,7 @@ dobuild: $(MYBUILD)
 	cd ..;
 
 %_git: makesrcdir
+	set -e; \
 	cd $(srcdir); \
 	name=$($*_basedir); \
 	if [ ! -f $$name/Makefile ]; then \
