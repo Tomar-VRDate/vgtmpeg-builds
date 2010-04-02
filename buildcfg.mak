@@ -30,5 +30,8 @@ else
 	CONFIGURE_BASE_OPT= --prefix=$(prefix)
 	export PKG_CONFIG_LIBDIR=${prefix}/lib/pkgconfig/
 	export PKG_CONFIG_PATH=${PKG_CONFIG_LIBDIR}
+	export CFLAGS=-g -O2 -I${prefix}/include 
+	export CXXFLAGS=-g -O2 -I${prefix}/include
+	export LDFLAGS=-L${prefix}/lib
 endif
 
