@@ -13,6 +13,12 @@ endif
 include buildcfg.mak packages.mak
 
 
+#support for config target
+CCOPT=$($(MODULE)_copt)
+ifdef ccopt
+CCOPT += $(ccopt)
+endif
+
 MYBUILD = $(foreach lib,$(PKG), $(lib).build)
 
 #test: 
@@ -64,7 +70,7 @@ config:
 ifdef MODULE
 	set -e; \
 	cd $(srcdir)/$($(MODULE)_basedir); \
-	./configure $($(MODULE)_copt); \
+	./configure $(CCOPT); \
 	cd ../..;
 else
 	@echo "MODULE='module' not specified on command line"
