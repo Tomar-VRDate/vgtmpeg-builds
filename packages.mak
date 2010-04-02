@@ -11,9 +11,9 @@ zlib_gettype=tar
 zlib_basedir=zlib-$(zlib_version)
 zlib_loc=$(RESOURCE_URL_BASE)
 ifeq ($(NBUILD_TYPE),win32)
-	zlib_copt=--prefix=${prefix} --static --uname=MINGW
+	zlib_copt=--prefix=${prefix} --uname=MINGW
 else
-	zlib_copt=--prefix=${prefix} --static
+	zlib_copt=--prefix=${prefix} 
 endif
 
 
