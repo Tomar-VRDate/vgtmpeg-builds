@@ -60,6 +60,15 @@ dobuild: $(MYBUILD)
 	fi; \
 	cd ..; 
 
+config: 
+ifdef MODULE
+	set -e; \
+	cd $(srcdir)/$($(MODULE)_basedir); \
+	./configure $($(MODULE)_copt); \
+	cd ../..;
+else
+	@echo "MODULE='module' not specified on command line"
+endif
 
 makesrcdir:
 	test -d $(srcdir) || mkdir -p $(srcdir);
