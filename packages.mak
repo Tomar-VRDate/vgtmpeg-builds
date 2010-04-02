@@ -39,7 +39,7 @@ gettext_version=0.17
 gettext_basedir=gettext-$(gettext_version)
 gettext_gettype=tar
 gettext_loc=$(RESOURCE_URL_BASE)
-gettext_copt=$(CONFIGURE_BASE_OPT) --enable-shared=no
+gettext_copt=$(CONFIGURE_BASE_OPT) 
 
 glib_version=2.22.5
 glib_basedir=glib-$(glib_version)
