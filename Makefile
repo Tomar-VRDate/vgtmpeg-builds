@@ -10,7 +10,9 @@ endif
 
 
 
-include buildcfg.mak packages.mak
+include buildcfg.mak 
+
+include devel.pkgcfg
 
 
 #support for config target
