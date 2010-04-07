@@ -66,6 +66,24 @@ dobuild: $(MYBUILD)
 	fi; \
 	cd ..; 
 
+modgitget:
+ifdef module
+	set -e; \
+	cd $(srcdir); \
+	name=$($(module)_basedir); \
+	if [ ! -f $$name/Makefile ]; then \
+	rm -rf $$name; \
+	git clone $($(module)_loc)/$$name; \
+	cd $$name; \
+	git checkout $($(module)_version); \
+	./autogen.sh -- $($(module)_copt); \
+	cd ..; \
+	fi; \
+	cd ..; 
+else
+	@echo "module='module' not specified on command line"
+endif
+
 modmake:
 ifdef module
 	set -e; \

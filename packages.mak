@@ -77,6 +77,12 @@ gst_plugins_good_gettype=git
 gst_plugins_good_loc=$(GITREPO_BASE)
 gst_plugins_good_copt=$(CONFIGURE_BASE_OPT) --enable-gtk-doc=no --disable-shout2
 
+gst_plugins_bad_version=RELEASE-0.10.18
+gst_plugins_bad_basedir=gst-plugins-bad
+gst_plugins_bad_gettype=git
+gst_plugins_bad_loc=$(GITREPO_BASE)
+gst_plugins_bad_copt=$(CONFIGURE_BASE_OPT) --enable-gtk-doc=no  --with-plugins=qtmux
+
 gst_ffmpeg_version=NELA_RELEASE-0.0.3
 gst_ffmpeg_basedir=gst-ffmpeg
 gst_ffmpeg_gettype=git
@@ -96,7 +102,7 @@ gmt_transcode_loc=$(GITREPO_BASE)
 gmt_transcode_copt=$(CONFIGURE_BASE_OPT) 
 
 ifeq ($(NBUILD_TYPE),win32)
-PKG= libiconv gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
+PKG= libiconv gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_ffmpeg encodebin gmt_transcode
 else
-PKG= gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_ffmpeg encodebin gmt_transcode
+PKG= gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_ffmpeg encodebin gmt_transcode
 endif
