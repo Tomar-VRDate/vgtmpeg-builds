@@ -81,9 +81,9 @@ gst_plugins_bad_version=RELEASE-0.10.18
 gst_plugins_bad_basedir=gst-plugins-bad
 gst_plugins_bad_gettype=git
 gst_plugins_bad_loc=$(GITREPO_BASE)
-gst_plugins_bad_copt=$(CONFIGURE_BASE_OPT) --enable-gtk-doc=no  --with-plugins=qtmux
+gst_plugins_bad_copt=$(CONFIGURE_BASE_OPT) --enable-gtk-doc=no  --with-plugins=qtmux --disable-acm  
 
-gst_ffmpeg_version=NELA_RELEASE-0.0.3
+gst_ffmpeg_version=NELA_RELEASE-0.0.4
 gst_ffmpeg_basedir=gst-ffmpeg
 gst_ffmpeg_gettype=git
 gst_ffmpeg_loc=$(GITREPO_BASE)
