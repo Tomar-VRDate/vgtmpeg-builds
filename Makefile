@@ -74,6 +74,12 @@ dobuild: $(MYBUILD)
 	$(MAKE); \
 	cd ../..;
 
+%_install:
+	set -e; \
+	cd $(srcdir)/$($*_basedir); \
+	$(MAKE) install; \
+	cd ../..;
+
 %_config: 
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
