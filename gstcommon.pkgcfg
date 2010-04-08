@@ -35,6 +35,12 @@ libvorbis_gettype=tar
 libvorbis_loc=$(RESOURCE_URL_BASE)
 libvorbis_copt=$(CONFIGURE_BASE_OPT)
 
+faac_version=1.28
+faac_basedir=faac-$(faac_version)
+faac_gettype=tar
+faac_loc=$(RESOURCE_URL_BASE)
+faac_copt=$(CONFIGURE_BASE_OPT) --without-mp4v2
+
 gettext_version=0.17
 gettext_basedir=gettext-$(gettext_version)
 gettext_gettype=tar
@@ -102,7 +108,7 @@ gmt_transcode_loc=$(GITREPO_BASE)
 gmt_transcode_copt=$(CONFIGURE_BASE_OPT) 
 
 ifeq ($(NBUILD_TYPE),win32)
-PKG= libiconv gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_ffmpeg encodebin gmt_transcode
+PKG= libiconv gettext glib liboil zlib libogg libvorbis faac gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_ffmpeg encodebin gmt_transcode
 else
-PKG= gettext glib liboil zlib libogg libvorbis gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_ffmpeg encodebin gmt_transcode
+PKG= gettext glib liboil zlib libogg libvorbis faac gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_ffmpeg encodebin gmt_transcode
 endif

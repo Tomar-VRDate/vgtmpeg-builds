@@ -29,7 +29,7 @@ MYBUILD = $(foreach lib,$(PKG), $(lib).build)
 dobuild: $(MYBUILD)
 
 .SECONDEXPANSION:
-%.build: %_$$($$*_gettype)
+%.build: %_get$$($$*_gettype)
 	set -e; \
 	cd $(srcdir); \
 	cd $($*_basedir); \
@@ -38,7 +38,7 @@ dobuild: $(MYBUILD)
 	cd ..;
 
 
-%_tar: makesrcdir
+%_gettar: makesrcdir
 	set -e; \
 	cd $(srcdir); \
 	base=$*-$($*_version); \
@@ -54,7 +54,7 @@ dobuild: $(MYBUILD)
 	fi; \
 	cd ..;
 
-%_git: makesrcdir
+%_getgit: makesrcdir
 	set -e; \
 	cd $(srcdir); \
 	name=$($*_basedir); \
@@ -68,43 +68,17 @@ dobuild: $(MYBUILD)
 	fi; \
 	cd ..; 
 
-modgitget:
-ifdef module
+%_make:
 	set -e; \
-	cd $(srcdir); \
-	name=$($(module)_basedir); \
-	if [ ! -f $$name/Makefile ]; then \
-	rm -rf $$name; \
-	git clone $($(module)_loc)/$$name; \
-	cd $$name; \
-	git checkout $($(module)_version); \
-	./autogen.sh -- $($(module)_copt); \
-	cd ..; \
-	fi; \
-	cd ..; 
-else
-	@echo "module='module' not specified on command line"
-endif
-
-modmake:
-ifdef module
-	set -e; \
-	cd $(srcdir)/$($(module)_basedir); \
+	cd $(srcdir)/$($*_basedir); \
 	$(MAKE); \
 	cd ../..;
-else
-	@echo "module='module' not specified on command line"
-endif
 
-config: 
-ifdef module
+%_config: 
 	set -e; \
-	cd $(srcdir)/$($(module)_basedir); \
+	cd $(srcdir)/$($*_basedir); \
 	./configure $(CCOPT); \
 	cd ../..;
-else
-	@echo "MODULE='module' not specified on command line"
-endif
 
 makesrcdir:
 	test -d $(srcdir) || mkdir -p $(srcdir);
