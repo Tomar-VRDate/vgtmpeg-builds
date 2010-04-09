@@ -93,7 +93,7 @@ dobuild: $(MYBUILD)
 makesrcdir:
 	test -d $(srcdir) || mkdir -p $(srcdir);
 
-reset:
+delete:
 	rm -rf $(NBUILD_TYPE)
 
 %.pkgmak: %.m4
