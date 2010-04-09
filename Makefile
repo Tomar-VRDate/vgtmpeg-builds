@@ -83,7 +83,11 @@ dobuild: $(MYBUILD)
 %_config: 
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
-	./configure $(CCOPT); \
+	if [ $($*_gettype) == tar ]; then \
+	./configure $(CCOPT) $($*_copt); \
+	else \
+	./autogen.sh -- $(CCOPT) $($*_copt) ; \
+	fi; \
 	cd ../..;
 
 makesrcdir:
