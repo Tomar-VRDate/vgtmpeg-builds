@@ -12,4 +12,4 @@ LCOPT($1,$6)
 ' ) dnl
 
 
-DEFMOD(`liboil', `RELEASE-0.1.1', `basedir', `tar', `$(GITREPO_BASE)', `--options')
+#DEFMOD(`liboil', `RELEASE-0.1.1', `basedir', `tar', `$(GITREPO_BASE)', `--options')
