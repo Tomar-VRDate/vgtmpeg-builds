@@ -13,6 +13,7 @@ endif
 include buildcfg.mak 
 
 include devel.pkgcfg
+include m4test.pkgmak
 
 
 #support for config target
@@ -36,7 +37,6 @@ dobuild: $(MYBUILD)
 	$(MAKE); \
 	$(MAKE) install; \
 	cd ..;
-
 
 %_gettar: makesrcdir
 	set -e; \
@@ -95,3 +95,9 @@ makesrcdir:
 
 reset:
 	rm -rf $(NBUILD_TYPE)
+
+%.pkgmak: %.m4
+	m4 $*.m4 > $*.pkgmak
+
+donothing:
+
