@@ -29,7 +29,7 @@ MYBUILD = $(foreach lib,$(PKG), $(lib).build)
 dobuild: $(MYBUILD)
 
 .SECONDEXPANSION:
-%.build: %_get$$($$*_gettype) %_config %_make %_install
+%.build: %_get$$($$*_gettype) %_forceconfig %_make %_install
 	echo "build succesful"
 
 
