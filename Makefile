@@ -29,9 +29,11 @@ MYBUILD = $(foreach lib,$(PKG), $(lib).build)
 dobuild: $(MYBUILD)
 
 .SECONDEXPANSION:
-%.build: %_get$$($$*_gettype) %_forceconfig %_make %_install
-	echo "build succesful"
+%.build: %_get %_forceconfig %_make %_install
+	@echo "build succesful"
 
+%_get: %_get$$($$*_gettype) %_postget
+	@echo got $*
 
 %_gettar: makesrcdir
 	set -e; \
@@ -58,6 +60,17 @@ dobuild: $(MYBUILD)
 	cd ..; \
 	fi; \
 	cd ..; 
+
+%_postget: 
+	set -e;\
+	pg=$$( readlink -f postget/$*/postget.sh);\
+	echo $$pg; \
+	if [ -f $$pg ]; then \
+	cd $(srcdir)/$($*_basedir); \
+	echo running postget script $$pg in $$PWD; \
+	$$pg; \
+	cd ../..; \
+	fi; 
 
 %_make:
 	set -e; \
