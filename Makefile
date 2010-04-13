@@ -71,6 +71,9 @@ dobuild: $(MYBUILD)
 	$(MAKE) install; \
 	cd ../..;
 
+%_delete:
+	rm -rf $(srcdir)/$($*_basedir); 
+
 %_config: 
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
