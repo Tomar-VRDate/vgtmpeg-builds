@@ -1,0 +1,10 @@
+include gstcommon.pkgcfg 
+
+
+#on devel builds we just grab the HEAD of these projects
+# this overwrites whatever defaults are there on gstcommon
+encodebin_version=HEAD
+gmt_transcode_version=HEAD
+gst_ffmpeg_version=HEAD
+
+

@@ -13,7 +13,6 @@ endif
 include buildcfg.mak 
 
 include devel.pkgcfg
-include m4test.pkgmak
 
 
 #support for config target
@@ -30,13 +29,9 @@ MYBUILD = $(foreach lib,$(PKG), $(lib).build)
 dobuild: $(MYBUILD)
 
 .SECONDEXPANSION:
-%.build: %_get$$($$*_gettype)
-	set -e; \
-	cd $(srcdir); \
-	cd $($*_basedir); \
-	$(MAKE); \
-	$(MAKE) install; \
-	cd ..;
+%.build: %_get$$($$*_gettype) %_config %_make %_install
+	echo "build succesful"
+
 
 %_gettar: makesrcdir
 	set -e; \
@@ -48,9 +43,6 @@ dobuild: $(MYBUILD)
 	wget -nc $$src; \
 	rm -rf $$base; \
 	tar -xzvf $$tar; \
-	cd $$base; \
-	./configure $($*_copt); \
-	cd ..; \
 	fi; \
 	cd ..;
 
@@ -63,7 +55,6 @@ dobuild: $(MYBUILD)
 	git clone $($*_loc)/$$name; \
 	cd $$name; \
 	git checkout $($*_version); \
-	./autogen.sh -- $($*_copt); \
 	cd ..; \
 	fi; \
 	cd ..; 
@@ -83,12 +74,19 @@ dobuild: $(MYBUILD)
 %_config: 
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
-	if [ $($*_gettype) == tar ]; then \
-	./configure $(CCOPT) $($*_copt); \
-	else \
-	./autogen.sh -- $(CCOPT) $($*_copt) ; \
+	if [ ! -f Makefile ]; then \
+	$($*_confcmd) $(CCOPT) $($*_copt); \
 	fi; \
 	cd ../..;
+
+%_forceconfig:
+	set -e; \
+	cd $(srcdir)/$($*_basedir); \
+	$($*_confcmd) $(CCOPT) $($*_copt); \
+	cd ../..;
+
+tags:
+	find . -name "*.[ch]" | xargs ctags -a;
 
 makesrcdir:
 	test -d $(srcdir) || mkdir -p $(srcdir);
@@ -96,8 +94,8 @@ makesrcdir:
 delete:
 	rm -rf $(NBUILD_TYPE)
 
-%.pkgmak: %.m4
-	m4 $*.m4 > $*.pkgmak
+%.pkgcfg: %.m4 defmod.m4 gstcommon.m4
+	m4 $*.m4 > $*.pkgcfg
 
 donothing:
 
