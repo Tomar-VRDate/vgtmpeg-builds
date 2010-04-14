@@ -63,9 +63,10 @@ dobuild: $(MYBUILD)
 
 %_postget: 
 	set -e;\
-	pg=$$( readlink -f postget/$*/postget.sh);\
+	pg="postget/$*/postget.sh";\
 	echo $$pg; \
 	if [ -f $$pg ]; then \
+	pg=$$(readlink -f $$pg); \
 	cd $(srcdir)/$($*_basedir); \
 	echo running postget script $$pg in $$PWD; \
 	$$pg; \
