@@ -2,10 +2,10 @@
 # native
 # win32
 
-ifeq ($(NBUILD_TYPE),win32)
-	export NBUILD_TYPE=win32
+ifeq ($(buildtype),win32)
+	export buildtype=win32
 else
-	export NBUILD_TYPE=native
+	export buildtype=native
 endif
 
 
@@ -21,7 +21,7 @@ ifdef ccopt
 CCOPT += $(ccopt)
 endif
 
-MYBUILD = $(foreach lib,$(PKG), $(lib).build)
+MYBUILD = $(foreach lib,$(PKG), $(lib)_build)
 
 #test: 
 #:w echo $(MYBUILD)
@@ -29,26 +29,17 @@ MYBUILD = $(foreach lib,$(PKG), $(lib).build)
 dobuild: $(MYBUILD)
 
 .SECONDEXPANSION:
-%.build: %_get %_forceconfig %_make %_install
+%_build: %_get %_forceconfig %_make %_install
 	@echo "build succesful"
 
 %_get: makesrcdir
 	$($*_getcmd)
 
-%_getss: %_get$$($$*_gettype) %_postget
-	@echo got $*
-
-%_postget: 
-	set -e;\
-	pg="postget/$*/postget.sh";\
-	echo $$pg; \
-	if [ -f $$pg ]; then \
-	pg=$$(readlink -f $$pg); \
+%_clean:
+	set -e; \
 	cd $(srcdir)/$($*_basedir); \
-	echo running postget script $$pg in $$PWD; \
-	$$pg; \
-	cd ../..; \
-	fi; 
+	$($*_makecmd) clean; \
+	cd ../..;
 
 %_make:
 	set -e; \
@@ -86,7 +77,7 @@ makesrcdir:
 	test -d $(srcdir) || mkdir -p $(srcdir);
 
 delete:
-	rm -rf $(NBUILD_TYPE)
+	rm -rf $(buildtype)
 
 %.pkgcfg: %.m4 defmod.m4 gstcommon.m4
 	m4 $*.m4 > $*.pkgcfg

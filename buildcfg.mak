@@ -2,19 +2,19 @@
 # native
 # win32
 
-ifeq ($(NBUILD_TYPE),win32)
-	export NBUILD_TYPE=win32
+ifeq ($(buildtype),win32)
+	export buildtype=win32
 else
-	export NBUILD_TYPE=native
+	export buildtype=native
 endif
 
 
-prefix=$(PWD)/$(NBUILD_TYPE)/build
-srcdir=$(PWD)/$(NBUILD_TYPE)/src
+prefix=$(PWD)/$(buildtype)/build
+srcdir=$(PWD)/$(buildtype)/src
 build=`gcc -dumpmachine`
 
 
-ifeq ($(NBUILD_TYPE),win32)
+ifeq ($(buildtype),win32)
 	CONFIGURE_BASE_OPT=--host=i586-mingw32msvc --build=$(build) --prefix=$(prefix)
 	export CC=i586-mingw32msvc-gcc
 	export AR=i586-mingw32msvc-ar

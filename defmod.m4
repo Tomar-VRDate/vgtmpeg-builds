@@ -1,8 +1,8 @@
 changequote([,])dnl
 
-define([TARCMD], [scripts/gettar.sh $($1_loc) $($1_basedir).tar.gz $(srcdir) $($1_basedir) $(NBUILD_TYPE)/cache]) dnl
-define([GITCMD], [scripts/getgit.sh $($1_loc) $(srcdir) $($1_basedir) $($1_version) $(NBUILD_TYPE)/cache]) dnl
-define([SVNCMD], [scripts/getsvn.sh "$($1_loc)" "$(srcdir)" "$($1_basedir)" "$($1_version)" "$(NBUILD_TYPE)/cache]") dnl
+define([TARCMD], [scripts/gettar.sh $($1_loc) $($1_basedir).tar.gz $(srcdir) $($1_basedir) $(buildtype)/cache]) dnl
+define([GITCMD], [scripts/getgit.sh $($1_loc) $(srcdir) $($1_basedir) $($1_version) $(buildtype)/cache]) dnl
+define([SVNCMD], [scripts/getsvn.sh "$($1_loc)" "$(srcdir)" "$($1_basedir)" "$($1_version)" "$(buildtype)/cache]") dnl
 
 
 
