@@ -1,8 +1,13 @@
 #!/bin/bash
 
+faac=faac-1.28
+tar=$faac.tar.gz
+
 SCRIPTDIR=$(dirname $(readlink -f $0));
 echo $SCRIPTDIR
 
+tar xzvf $tar
+cd $faac
 # this is supposed to be run on the top of faac sources
 echo patching Makefile.am to enable mingw32 dll creation
 patch -p0 -N --verbose < $SCRIPTDIR/Makefile.am.patch

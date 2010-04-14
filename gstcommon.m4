@@ -3,13 +3,15 @@ include(`defmod.m4')
 
 RESOURCE_URL_BASE=http://nelalabs.com/res
 GITREPO_BASE=git@nelalabs.unfuddle.com:nelalabs
+SVN_BASE=--username alberto --password 00z4swxu svn://guarida.dyndns.org/nelapackages
 
 DEFMOD_DEFAULT_COPT( [$(CONFIGURE_BASE_OPT)] )
 
     
-DEFMOD([zlib], [1.2.4],, [tar], [$(RESOURCE_URL_BASE)], [--prefix=${prefix}] )
+DEFMOD([zlib], [1.2.4],, [svn], [$(SVN_BASE)], [--prefix=${prefix}] )
 ifeq ($(NBUILD_TYPE),win32)
 	DEFMOD_COPT_ADD( [zlib], [--uname=MINGW] )
+    DEFMOD_MAKECMD([zlib], [$(MAKE) -f win32/Makefile.gcc])
 endif
 
 DEFMOD([libogg], [1.1.4],, [tar], [$(RESOURCE_URL_BASE)])

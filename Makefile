@@ -32,34 +32,11 @@ dobuild: $(MYBUILD)
 %.build: %_get %_forceconfig %_make %_install
 	@echo "build succesful"
 
-%_get: %_get$$($$*_gettype) %_postget
+%_get: makesrcdir
+	$($*_getcmd)
+
+%_getss: %_get$$($$*_gettype) %_postget
 	@echo got $*
-
-%_gettar: makesrcdir
-	set -e; \
-	cd $(srcdir); \
-	base=$*-$($*_version); \
-	tar=$$base.tar.gz; \
-	src=$($*_loc)/$$tar;\
-	if [ ! -f $$base/Makefile ]; then \
-	wget -nc $$src; \
-	rm -rf $$base; \
-	tar -xzvf $$tar; \
-	fi; \
-	cd ..;
-
-%_getgit: makesrcdir
-	set -e; \
-	cd $(srcdir); \
-	name=$($*_basedir); \
-	if [ ! -f $$name/Makefile ]; then \
-	rm -rf $$name; \
-	git clone $($*_loc)/$$name; \
-	cd $$name; \
-	git checkout $($*_version); \
-	cd ..; \
-	fi; \
-	cd ..; 
 
 %_postget: 
 	set -e;\
@@ -76,13 +53,13 @@ dobuild: $(MYBUILD)
 %_make:
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
-	$(MAKE); \
+	$($*_makecmd); \
 	cd ../..;
 
 %_install:
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
-	$(MAKE) install; \
+	$($*_makecmd) install; \
 	cd ../..;
 
 %_delete:
