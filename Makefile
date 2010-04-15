@@ -2,14 +2,6 @@
 # native
 # win32
 
-ifeq ($(buildtype),win32)
-	export buildtype=win32
-else
-	export buildtype=native
-endif
-
-
-
 include buildcfg.mak 
 
 include devel.pkgcfg

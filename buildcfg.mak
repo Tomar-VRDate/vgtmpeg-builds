@@ -2,12 +2,15 @@
 # native
 # win32
 
+export buildtype=native
+
 ifeq ($(buildtype),win32)
 	export buildtype=win32
-else
-	export buildtype=native
 endif
 
+ifeq ($(buildtype),darwin)
+	export buildtype=darwin
+endif
 
 prefix=$(PWD)/$(buildtype)/build
 srcdir=$(PWD)/$(buildtype)/src

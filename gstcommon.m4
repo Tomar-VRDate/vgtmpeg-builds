@@ -34,12 +34,17 @@ DEFMOD([gst_ffmpeg], [NELA_RELEASE-0.0.5], [gst-ffmpeg], [git], [$(GITREPO_BASE)
 DEFMOD([encodebin], [RELEASE-0.0.3], [encodebin], [git], [$(GITREPO_BASE)],,,[./autogen.sh --] )
 DEFMOD([gmt_transcode], [RELEASE-0.0.1], [gmt-transcode], [git], [$(GITREPO_BASE)],,,[./autogen.sh --] )
 
-
+dnl defaults here
 GSTREAMER_PKGS = gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_plugins_ugly gst_ffmpeg
+PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode
+
+dnl per target configs
 ifeq ($(buildtype),win32)
 PKG= libiconv gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode
-else
-PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode
+endif
+
+ifeq ($(buildtype),darwin)
+PKG= libiconv gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode
 endif
 
 
