@@ -27,7 +27,7 @@ if [ -f postget.sh ]; then
 fi
 
 #finally move untarred ball onto dest
-mv $basedir $srcdir
+cp -r $basedir $srcdir
 cd ..;
 cd ..;
 

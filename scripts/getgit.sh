@@ -22,6 +22,6 @@ cd ..
 
 
 #finally move untarred ball onto dest
-mv $gitname $srcdir
+cp -r $gitname $srcdir
 cd ..;
 cd ..;
