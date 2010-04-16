@@ -14,10 +14,10 @@ ifeq ($(buildtype),win32)
     DEFMOD_MAKECMD([zlib], [$(MAKE) -f win32/Makefile.gcc])
 endif
 
+DEFMOD([libiconv], [1.13.1],, [tar], [$(RESOURCE_URL_BASE)])
 DEFMOD([libogg], [1.2.0],, [svn], [$(SVN_BASE)])
 DEFMOD([libvorbis], [1.3.1],, [svn], [$(SVN_BASE)])
-DEFMOD([libiconv], [1.13.1],, [tar], [$(RESOURCE_URL_BASE)])
-DEFMOD([faac], [1.28],, [tar], [$(RESOURCE_URL_BASE)],,[--without-mp4v2])
+DEFMOD([faac], [1.28],, [svn], [$(SVN_BASE)],,[--without-mp4v2])
 DEFMOD([gettext], [0.17],, [tar], [$(RESOURCE_URL_BASE)])
 DEFMOD([glib], [2.22.5],, [tar], [$(RESOURCE_URL_BASE)],,,[./autogen.sh] )
 DEFMOD([libxml2], [2.7.7],, [tar], [$(RESOURCE_URL_BASE)],,[--without-python])
