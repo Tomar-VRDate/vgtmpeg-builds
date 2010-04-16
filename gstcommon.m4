@@ -3,7 +3,7 @@ include(`defmod.m4')
 
 RESOURCE_URL_BASE=http://nelalabs.com/res
 GITREPO_BASE=git@nelalabs.unfuddle.com:nelalabs
-SVN_BASE=--username alberto --password 00z4swxu svn://guarida.dyndns.org/nelapackages
+SVN_BASE=--username svnuser --password 19761976 http://nelalabs.com/svn/nelapackages
 
 DEFMOD_DEFAULT_COPT( [$(CONFIGURE_BASE_OPT)] )
 
