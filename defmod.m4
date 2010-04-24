@@ -17,6 +17,7 @@ define([DEFMOD_CONF_CMD],    [ifelse( [], [$2], [$1_confcmd=./configure], [$1_co
 define([DEFMOD_DEFAULT_COPT], [default_copt=$1] ) dnl
 define([DEFMOD_GETCMD], [ifelse( [tar], [$2], [$1_getcmd=TARCMD($1)], [svn], [$2], [$1_getcmd=SVNCMD($1)], [$1_getcmd=GITCMD($1)] )]) dnl
 define([DEFMOD_MAKECMD], [$1_makecmd=$2]) dnl
+define([DEFMOD_INSTCMD], [$1_instcmd=$2]) dnl
 
 dnl DEFMOD ( libname, version, [basedir], type, url, [copt_default], [copt_extra] )
 define([DEFMOD], [DEFMOD_VER($1,$2)
@@ -28,6 +29,7 @@ DEFMOD_COPT_ADD($1,$7)
 DEFMOD_CONF_CMD($1,$8)
 DEFMOD_GETCMD($1,$4)
 DEFMOD_MAKECMD($1,$(MAKE))
+DEFMOD_INSTCMD($1,[$(MAKE) install])
 ] ) dnl
 
 

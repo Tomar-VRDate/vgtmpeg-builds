@@ -35,8 +35,9 @@ DEFMOD([gst_ffmpeg], [NELA_RELEASE-0.0.5], [gst-ffmpeg], [git], [$(GITREPO_BASE)
 DEFMOD([encodebin], [RELEASE-0.0.3], [encodebin], [git], [$(GITREPO_BASE)],,,[./autogen.sh --] )
 DEFMOD([gmt_transcode], [RELEASE-0.0.1], [gmt-transcode], [git], [$(GITREPO_BASE)],,,[./autogen.sh --] )
 
-DEFMOD([gmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./] )
+DEFMOD([gmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[echo] )
 DEFMOD_MAKECMD([gmt_dist],[GSTDISTCMD([gmt_dist])])
+DEFMOD_INSTCMD([gmt_dist],[:])
 
 
 dnl defaults here

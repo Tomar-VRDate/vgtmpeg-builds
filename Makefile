@@ -42,7 +42,7 @@ dobuild: $(MYBUILD)
 %_install:
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
-	$($*_makecmd) install; \
+	$($*_instcmd); \
 	cd ../..;
 
 %_delete:

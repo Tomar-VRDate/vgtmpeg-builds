@@ -9,33 +9,31 @@
         <dstdir name="plugindir">lib/gstreamer-0.10</dstdir>
         <dstdir name="libdir">lib</dstdir>
     </dstdirs>
-    <group name="faac">
+    <group name="codecs">
         <item type="pname" dest="plugindir">faac</item>
+        <item type="pname" dest="plugindir">ffmpeg</item>
+    </group>
+    <group name="muxers">
+        <item type="pname" dest="plugindir">wavparse</item>
+        <item type="pname" dest="plugindir">avi</item>
+        <item type="pname" dest="plugindir">asf</item>
+        <item type="pname" dest="plugindir">qtdemux</item>
+        <item type="pname" dest="plugindir">matroska</item>
+        <item type="pname" dest="plugindir">flv</item>
     </group>
     <group name="gst_devel">
-        <item type="group">faac</item>
-        <item type="bin" dest="bindir">gst-inspect</item>
-        <item type="bin" dest="bindir">gst-launch</item>
-        <item type="bin" dest="bindir">gst-typefind</item>
-        <item type="pname" dest="plugindir">ffmpeg</item>
+        <item type="group">codecs</item>
+        <item type="group">muxers</item>
         <item type="pname" dest="plugindir">decodebin2</item>
         <item type="pname" dest="plugindir">nltrans</item>
-        <item type="pname" dest="plugindir">playbin</item>
         <item type="pname" dest="plugindir">autodetect</item>
         <item type="pname" dest="plugindir">audioconvert</item>
         <item type="pname" dest="plugindir">audioresample</item>
-        <item type="pname" dest="plugindir">matroska</item>
         <item type="pname" dest="plugindir">audiorate</item>
-        <item type="pname" dest="plugindir">volume</item>
         <item type="pname" dest="plugindir">ffmpegcolorspace</item>
-        <item type="pname" dest="plugindir">flv</item>
-        <item type="pname" dest="plugindir">videoscale</item>
+        <item type="pname" dest="plugindir">ffmpegscale</item>
         <item type="pname" dest="plugindir">videobox</item>
         <item type="pname" dest="plugindir">videorate</item>
-        <item type="pname" dest="plugindir">qtdemux</item>
-        <item type="pname" dest="plugindir">audiotestsrc</item>
-        <item type="pname" dest="plugindir">videotestsrc</item>
-        <item type="pname" dest="plugindir">avi</item>
     </group>
     <deploy> 
         <dgroup>gst_devel</dgroup>
