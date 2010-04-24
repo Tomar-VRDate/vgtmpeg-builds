@@ -22,6 +22,6 @@ cd ..
 
 
 #finally move untarred ball onto dest
-cp -rf $gitname $srcdir
+cp -arf $gitname $srcdir
 cd ..;
 cd ..;

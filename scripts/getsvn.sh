@@ -21,6 +21,6 @@ if [ -f postget.sh ]; then
 fi
 
 #finally move untarred ball onto dest
-cp -rf $svnname $srcdir
+cp -arf $svnname $srcdir
 cd ..;
 cd ..;
