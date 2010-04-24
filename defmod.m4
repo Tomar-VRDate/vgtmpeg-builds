@@ -3,6 +3,7 @@ changequote([,])dnl
 define([TARCMD], [scripts/gettar.sh $($1_loc) $($1_basedir).tar.gz $(srcdir) $($1_basedir) $(buildtype)/cache]) dnl
 define([GITCMD], [scripts/getgit.sh $($1_loc) $(srcdir) $($1_basedir) $($1_version) $(buildtype)/cache]) dnl
 define([SVNCMD], [scripts/getsvn.sh "$($1_loc)" "$(srcdir)" "$($1_basedir)" "$($1_version)" "$(buildtype)/cache]") dnl
+define([GSTDISTCMD], [./gst_dist_builder --pars $(topdir)/scripts/gstdist/$1.xml --src_base $(prefix) --dst_base $(distdir)/$1 --dist_type=$(buildtype)] )
 
 
 
@@ -28,7 +29,6 @@ DEFMOD_CONF_CMD($1,$8)
 DEFMOD_GETCMD($1,$4)
 DEFMOD_MAKECMD($1,$(MAKE))
 ] ) dnl
-
 
 
 

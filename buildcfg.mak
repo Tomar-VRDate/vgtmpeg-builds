@@ -12,8 +12,10 @@ ifeq ($(buildtype),darwin)
 	export buildtype=darwin
 endif
 
-prefix=$(PWD)/$(buildtype)/build
-srcdir=$(PWD)/$(buildtype)/src
+topdir=$(PWD)
+distdir=$(topdir)/$(buildtype)/dist
+prefix=$(topdir)/$(buildtype)/build
+srcdir=$(topdir)/$(buildtype)/src
 build=`gcc -dumpmachine`
 
 

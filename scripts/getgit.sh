@@ -15,7 +15,7 @@ rm -rf $gitname;
 mkdir $gitname;
 cd $gitname;
 
-git clone $base_url/$gitname
+git clone ${base_url}${gitname}
 cd $gitname
 git checkout $gitver
 cd ..
