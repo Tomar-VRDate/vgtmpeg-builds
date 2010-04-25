@@ -13,6 +13,7 @@ DEFMOD([zlib], [1.2.4],, [svn], [$(SVN_BASE)], [--prefix=${prefix}] )
 ifeq ($(buildtype),win32)
 	DEFMOD_COPT_ADD( [zlib], [--uname=MINGW] )
     DEFMOD_MAKECMD([zlib], [$(MAKE) -f win32/Makefile.gcc])
+    DEFMOD_INSTCMD([zlib], [$(MAKE) -f win32/Makefile.gcc install])
 endif
 
 DEFMOD([libiconv], [1.13.1],, [tar], [$(RESOURCE_URL_BASE)])
