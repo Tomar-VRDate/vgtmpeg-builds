@@ -53,7 +53,7 @@ PKG= libiconv gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) e
 endif
 
 ifeq ($(buildtype),darwin)
-PKG= libiconv gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode gmt_dist
+PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode gmt_dist
 endif
 
 

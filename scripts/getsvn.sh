@@ -10,7 +10,7 @@ cachedir=$5
 set -x 
 set -e; 
 test -d $cachedir || mkdir $cachedir
-cd $( readlink -f $cachedir); 
+cd $cachedir
 rm -rf $svnname;
 
 svn checkout $base_url/$svnname
@@ -22,5 +22,3 @@ fi
 
 #finally move untarred ball onto dest
 cp -arf $svnname $srcdir
-cd ..;
-cd ..;

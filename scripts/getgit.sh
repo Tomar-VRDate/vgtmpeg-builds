@@ -10,7 +10,7 @@ cachedir=$5
 set -x 
 set -e; 
 test -d $cachedir || mkdir $cachedir
-cd $( readlink -f $cachedir); 
+cd $cachedir
 rm -rf $gitname;
 mkdir $gitname;
 cd $gitname;
@@ -22,6 +22,4 @@ cd ..
 
 
 #finally move untarred ball onto dest
-cp -arf $gitname $srcdir
-cd ..;
-cd ..;
+cp -aRf $gitname $srcdir

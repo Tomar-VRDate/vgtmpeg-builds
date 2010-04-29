@@ -12,7 +12,7 @@ set -e;
 test -d $cachedir || mkdir $cachedir
 
 if [ ! -d $srcdir/$basedir ]; then
-cd $( readlink -f $cachedir); 
+cd $cachedir
 rm -rf $basedir;
 mkdir -p $basedir/tar;
 cd $basedir;
@@ -27,9 +27,7 @@ if [ -f postget.sh ]; then
 fi
 
 #finally move untarred ball onto dest
-cp -arf $basedir $srcdir
-cd ..;
-cd ..;
+cp -aRf $basedir $srcdir
 
 fi
 
