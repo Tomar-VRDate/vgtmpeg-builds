@@ -23,7 +23,7 @@ DEFMOD([faac], [1.28],, [svn], [$(SVN_BASE)],,[--without-mp4v2])
 DEFMOD([gettext], [0.17],, [tar], [$(RESOURCE_URL_BASE)])
 DEFMOD_COPT_ADD([gettext], [--disable-csharp --without-emacs --disable-java --disable-native-java] )
 
-DEFMOD([glib], [2.22.5],, [tar], [$(RESOURCE_URL_BASE)],,,[./autogen.sh] )
+DEFMOD([glib], [2.22.5],, [svn], [$(SVN_BASE)])
 DEFMOD([libxml2], [2.7.7],, [tar], [$(RESOURCE_URL_BASE)],,[--without-python])
 DEFMOD([liboil], [0.3.17],, [tar], [$(RESOURCE_URL_BASE)],,[--disable-glib --disable-gtk-doc], [./autogen.sh])
 
