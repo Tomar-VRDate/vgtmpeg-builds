@@ -47,5 +47,6 @@ else
 	export INCLUDE_PATH=${prefix}/include
 	export BIN_PATH=${prefix}/bin
 	export LIBRARY_PATH=${prefix}/lib
+	export PATH:=$(BIN_PATH):$(PATH)
 endif
 

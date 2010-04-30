@@ -23,6 +23,7 @@ DEFMOD([faac], [1.28],, [svn], [$(SVN_BASE)],,[--without-mp4v2])
 DEFMOD([gettext], [0.17],, [tar], [$(RESOURCE_URL_BASE)])
 DEFMOD_COPT_ADD([gettext], [--disable-csharp --without-emacs --disable-java --disable-native-java] )
 
+DEFMOD([pkg_config], [0.23],[pkg-config-0.23], [svn], [$(SVN_BASE)])
 DEFMOD([glib], [2.22.5],, [svn], [$(SVN_BASE)])
 DEFMOD([libxml2], [2.7.7],, [tar], [$(RESOURCE_URL_BASE)],,[--without-python])
 DEFMOD([liboil], [0.3.17],, [tar], [$(RESOURCE_URL_BASE)],,[--disable-glib --disable-gtk-doc], [./autogen.sh])
@@ -53,7 +54,7 @@ PKG= libiconv gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) e
 endif
 
 ifeq ($(buildtype),darwin)
-PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode gmt_dist
+PKG= gettext pkg_config glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) encodebin gmt_transcode gmt_dist
 endif
 
 
