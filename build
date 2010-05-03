@@ -1,0 +1,13 @@
+#!/bin/bash
+set -x
+uname=`uname`
+
+if [ "$buildtype" == "" ] && [ "$uname" == "Linux" ]; then
+    buildtype=linux
+else
+    echo "Couldnt determine buildtype"
+    exit
+fi
+
+make buildtype=$buildtype $@
+
