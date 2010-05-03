@@ -39,7 +39,7 @@ DEFMOD([gst_ffmpeg], [NELA_RELEASE-0.0.5], [gst-ffmpeg], [git], [$(NL_GIT_BASE_G
 DEFMOD([nltrans], [RELEASE-0.0.3], [nltrans], [git], [$(NL_GIT_BASE_GST)],,,[./autogen.sh --] )
 DEFMOD([gmt_transcode], [RELEASE-0.0.1], [gmt-transcode], [git], [$(NL_GIT_BASE_GST)],,,[./autogen.sh --] )
 
-DEFMOD([gmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[echo] )
+DEFMOD([gmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )
 DEFMOD_MAKECMD([gmt_dist],[GSTDISTCMD([gmt_dist])])
 DEFMOD_INSTCMD([gmt_dist],[:])
 
