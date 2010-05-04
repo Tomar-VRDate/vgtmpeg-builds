@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+set +x
 uname=`uname`
 
 if [ "$buildtype" == "" ] && [ "$uname" == "Linux" ]; then
