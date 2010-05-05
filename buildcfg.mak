@@ -2,10 +2,14 @@
 # native
 # win32
 
-export buildtype=native
+ifeq ($(buildtype),linux-x86_64)
+	export build_os=linux
+	export build_arch=x86_32
+endif
 
-ifeq ($(buildtype),win32)
-	export buildtype=win32
+ifeq ($(buildtype),windows-x86_32)
+	export build_os=windows
+	export build_arch=x86_32
 endif
 
 ifeq ($(buildtype),darwin)
@@ -19,7 +23,7 @@ srcdir=$(topdir)/$(buildtype)/src
 build=`gcc -dumpmachine`
 
 
-ifeq ($(buildtype),win32)
+ifeq ($(buildtype),windows-x86_32)
 	CONFIGURE_BASE_OPT=--host=i586-mingw32msvc --build=$(build) --prefix=$(prefix)
 	export CC=i586-mingw32msvc-gcc
 	export AR=i586-mingw32msvc-ar

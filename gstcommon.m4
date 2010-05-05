@@ -10,7 +10,7 @@ DEFMOD_DEFAULT_COPT( [$(CONFIGURE_BASE_OPT)] )
 
     
 DEFMOD([zlib], [1.2.4],, [svn], [$(SVN_BASE)], [--prefix=${prefix}] )
-ifeq ($(buildtype),win32)
+ifeq ($(buildtype),windows-x86_32)
 	DEFMOD_COPT_ADD( [zlib], [--uname=MINGW] )
     DEFMOD_MAKECMD([zlib], [$(MAKE) -f win32/Makefile.gcc])
     DEFMOD_INSTCMD([zlib], [$(MAKE) -f win32/Makefile.gcc install])
@@ -46,10 +46,10 @@ DEFMOD_INSTCMD([gmt_dist],[:])
 
 dnl defaults here
 GSTREAMER_PKGS = gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_plugins_ugly gst_ffmpeg
-PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) nltrans gmt_transcode
+PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) nltrans gmt_transcode gmt_dist
 
 dnl per target configs
-ifeq ($(buildtype),win32)
+ifeq ($(buildtype),windows-x86_32)
 PKG= libiconv gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) nltrans gmt_transcode gmt_dist
 endif
 

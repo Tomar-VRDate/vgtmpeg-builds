@@ -3,7 +3,11 @@ set +x
 uname=`uname`
 
 if [ "$buildtype" == "" ] && [ "$uname" == "Linux" ]; then
-    buildtype=linux
+    if [[ `uname -a` =~ "x86_64" ]]; then
+        buildtype=linux-x86_64
+    else
+        buildtype=linux-x86_32
+    fi
 else
     echo "Couldnt determine buildtype"
     exit
