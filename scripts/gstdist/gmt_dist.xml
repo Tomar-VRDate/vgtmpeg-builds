@@ -39,7 +39,7 @@
         <dgroup>gst_devel</dgroup>
     </deploy>
     <options>
-        <tardist tar="on" sevenzip="off" gzip="off" bzip2="off" >gmt-gstdist</tardist> 
+        <tardist nbundle="on" tar="on" sevenzip="off" gzip="off" bzip2="off" >gmt-gstdist</tardist> 
         <cleanfirst/>
     </options>
 </gstbuildpars>

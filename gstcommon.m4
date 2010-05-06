@@ -26,7 +26,7 @@ DEFMOD_COPT_ADD([gettext], [--disable-csharp --without-emacs --disable-java --di
 DEFMOD([pkg_config], [0.23],[pkg-config-0.23], [svn], [$(SVN_BASE)])
 DEFMOD([glib], [2.22.5],, [svn], [$(SVN_BASE)])
 DEFMOD([libxml2], [2.7.7],, [tar], [$(RESOURCE_URL_BASE)],,[--without-python])
-DEFMOD([liboil], [0.3.17],, [tar], [$(RESOURCE_URL_BASE)],,[--disable-glib --disable-gtk-doc], [./autogen.sh])
+DEFMOD([liboil], [0.3.17],, [tar], [$(RESOURCE_URL_BASE)],,[--disable-glib --disable-gtk-doc])
 
 DEFMOD([gstreamer], [RELEASE-0.10.28], [gstreamer], [git], [$(NL_GIT_BASE_GST)],,,[./autogen.sh --] )
 DEFMOD_COPT_ADD([gstreamer], [--enable-gtk-doc=no --disable-loadsave --disable-examples --disable-tests --disable-check --disable-net] )

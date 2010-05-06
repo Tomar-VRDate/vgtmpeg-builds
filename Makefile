@@ -24,7 +24,7 @@ dobuild: $(MYBUILD)
 %_build: %_get %_forceconfig %_make %_install
 	@echo "build succesful"
 
-%_get: makesrcdir
+%_get: prereq
 	$($*_getcmd)
 
 %_clean:
@@ -33,7 +33,7 @@ dobuild: $(MYBUILD)
 	$($*_makecmd) clean; \
 	cd ../..;
 
-%_make:
+%_make: prereq
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
 	$($*_makecmd); \
@@ -65,8 +65,11 @@ dobuild: $(MYBUILD)
 tags:
 	find . -name "*.[ch]" | xargs ctags -a;
 
-makesrcdir:
-	test -d $(srcdir) || mkdir -p $(srcdir);
+prereq:
+	set -x; \
+	test -d $(srcdir) || mkdir -p $(srcdir); \
+	perl -e 'die "\n\n\n/bin/sh doesnt seem to point to bash. bash is required." if (`ls -l /bin/sh` !~ /bash/)';
+
 
 delete:
 	rm -rf $(buildtype)
