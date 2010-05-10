@@ -46,7 +46,9 @@ dobuild: $(MYBUILD)
 	cd ../..;
 
 %_delete:
-	rm -rf $(srcdir)/$($*_basedir); 
+	if [ ! "$($*_basedir)" = "" ]; then \
+	rm -rf $(srcdir)/$($*_basedir); \
+	fi;
 
 %_config: 
 	set -e; \
