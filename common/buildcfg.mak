@@ -17,9 +17,10 @@ ifeq ($(buildtype),darwin)
 endif
 
 topdir=$(PWD)
-distdir=$(topdir)/${builddef}/$(buildtype)/dist
-prefix=$(topdir)/${builddef}/$(buildtype)/build
-srcdir=$(topdir)/${builddef}/$(buildtype)/src
+buildbasedir=$(topdir)/${builddef}/$(buildtype)
+distdir=$(buildbasedir)/dist
+prefix=$(buildbasedir)/build
+srcdir=$(buildbasedir)/src
 build=`gcc -dumpmachine`
 
 

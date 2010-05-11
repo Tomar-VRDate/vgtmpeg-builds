@@ -77,7 +77,7 @@ prereq:
 
 
 delete:
-	rm -rf $(builddef)/$(buildtype)
+	rm -rf $(buildbasedir)
 
 %.pkgcfg: builddefs/%.m4 common builddefs
 	m4 builddefs/$*.m4 > $*.pkgcfg
