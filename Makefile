@@ -2,9 +2,11 @@
 # native
 # win32
 
-include buildcfg.mak 
 
-include devel.pkgcfg
+builddef ?= default
+
+include $(builddef).pkgcfg
+
 
 
 #support for config target
@@ -76,8 +78,8 @@ prereq:
 delete:
 	rm -rf $(buildtype)
 
-%.pkgcfg: %.m4 defmod.m4 gstcommon.m4
-	m4 $*.m4 > $*.pkgcfg
+%.pkgcfg: builddefs/%.m4 common builddefs
+	m4 builddefs/$*.m4 > $*.pkgcfg
 
 donothing:
 

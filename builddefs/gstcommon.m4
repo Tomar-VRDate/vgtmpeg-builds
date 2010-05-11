@@ -1,4 +1,5 @@
-include(`defmod.m4')
+include(`common/defmod.m4')
+include([common/buildcfg.mak])
 
 
 RESOURCE_URL_BASE=http://nelalabs.com/res

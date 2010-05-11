@@ -25,6 +25,7 @@
         <item type="group">codecs</item>
         <item type="group">muxers</item>
         <item type="pname" dest="plugindir">decodebin2</item>
+        <item type="pname" dest="plugindir">decodebin</item>
         <item type="pname" dest="plugindir">nltrans</item>
         <item type="pname" dest="plugindir">autodetect</item>
         <item type="pname" dest="plugindir">audioconvert</item>
@@ -34,6 +35,8 @@
         <item type="pname" dest="plugindir">ffmpegscale</item>
         <item type="pname" dest="plugindir">videobox</item>
         <item type="pname" dest="plugindir">videorate</item>
+        <item type="pname" dest="plugindir">coreelements</item>
+        <item type="pname" dest="plugindir">typefindfunctions</item>
     </group>
     <deploy> 
         <dgroup>gst_devel</dgroup>
