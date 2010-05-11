@@ -1,0 +1,3 @@
+#!/bin/bash
+./build builddef=javadist &> log/build_javadist.log &
+./build builddef=default   &> log/build_default.log &
