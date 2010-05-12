@@ -12,8 +12,14 @@ ifeq ($(buildtype),windows-x86_32)
 	export build_arch=x86_32
 endif
 
-ifeq ($(buildtype),darwin)
-	export buildtype=darwin
+ifeq ($(buildtype),darwin-x86_64)
+	export build_os=darwin
+	export build_arch=x86_64
+endif
+
+ifeq ($(buildtype),darwin-x86_32)
+	export build_os=darwin
+	export build_arch=x86_32
 endif
 
 topdir=$(PWD)
@@ -55,3 +61,14 @@ else
 	export PATH:=$(BIN_PATH):$(PATH)
 endif
 
+ifeq ($(buildtype),darwin-x86_32)
+	CONFIGURE_BASE_OPT += --build=$(build)
+	export CFLAGS=-g -O2 -I${prefix}/include -arch i386
+	export LDFLAGS=-L${prefix}/lib -arch i386
+endif
+
+ifeq ($(buildtype),darwin-x86_64)
+	CONFIGURE_BASE_OPT += --build=$(build)
+	export CFLAGS=-g -O2 -I${prefix}/include -arch x86_64
+	export LDFLAGS=-L${prefix}/lib -arch x86_64
+endif

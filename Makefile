@@ -73,7 +73,7 @@ prereq:
 	set -x; \
 	test -d log || mkdir log ;\
 	test -d $(srcdir) || mkdir -p $(srcdir); \
-	perl -e 'die "\n\n\n/bin/sh doesnt seem to point to bash. bash is required." if (`ls -l /bin/sh` !~ /bash/)';
+	perl -e 'die "\n\n\n/bin/sh doesnt seem to point to bash. bash is required." if (`/bin/sh --version` !~ /bash/)';
 
 
 delete:
