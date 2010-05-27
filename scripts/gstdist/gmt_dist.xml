@@ -18,6 +18,7 @@
         <item type="pname" dest="plugindir">avi</item>
         <item type="pname" dest="plugindir">asf</item>
         <item type="pname" dest="plugindir">qtdemux</item>
+        <item type="pname" dest="plugindir">qtmux</item>
         <item type="pname" dest="plugindir">matroska</item>
         <item type="pname" dest="plugindir">flv</item>
     </group>
