@@ -62,13 +62,13 @@ else
 endif
 
 ifeq ($(buildtype),darwin-x86_32)
-	CONFIGURE_BASE_OPT += --build=$(build)
+	CONFIGURE_BASE_OPT += --host=i386-apple-darwin10
 	export CFLAGS=-g -O2 -I${prefix}/include -arch i386
 	export LDFLAGS=-L${prefix}/lib -arch i386
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
-	CONFIGURE_BASE_OPT += --build=$(build)
+	CONFIGURE_BASE_OPT += --host=x86_64-apple-darwin10
 	export CFLAGS=-g -O2 -I${prefix}/include -arch x86_64
 	export LDFLAGS=-L${prefix}/lib -arch x86_64
 endif

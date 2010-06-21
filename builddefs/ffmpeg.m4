@@ -1,7 +1,12 @@
-include(`builddefs/gstcommon.m4')
 
-DEFMOD_COPT_ADD([ffmpeg], [--enable-gpl --enable-nonfree --enable-libx264 --enable-libfaac --enable-pthreads] )
-DEFMOD_COPT_ADD([faac], [--disable-shared ] )
-PKG= x264 faac ffmpeg
+ifeq ($(buildtype),darwin-x86_32)
+	FFMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --arch=i386
+endif
 
+ifeq ($(buildtype),darwin-x86_64)
+	FFMPEG_CONFIGURE_BASE_OPT =  --prefix=$(prefix) --arch=x86_64
+endif
+
+DEFMOD([ffmpeg],[0.5.2],,[svn],[$(SVN_BASE)])
+DEFMOD_COPT([ffmpeg],[$(FFMPEG_CONFIGURE_BASE_OPT)])
 

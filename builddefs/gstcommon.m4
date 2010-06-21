@@ -21,7 +21,7 @@ DEFMOD([libiconv], [1.13.1],, [tar], [$(RESOURCE_URL_BASE)])
 DEFMOD([libogg], [1.2.0],, [svn], [$(SVN_BASE)])
 DEFMOD([libvorbis], [1.3.1],, [svn], [$(SVN_BASE)])
 DEFMOD([faac], [1.28],, [svn], [$(SVN_BASE)],,[--without-mp4v2])
-DEFMOD([gettext], [0.17],, [tar], [$(RESOURCE_URL_BASE)])
+DEFMOD([gettext], [0.18.1.1],, [svn], [$(SVN_BASE)])
 DEFMOD_COPT_ADD([gettext], [--disable-csharp --without-emacs --disable-java --disable-native-java] )
 
 DEFMOD([pkg_config], [0.23],[pkg-config-0.23], [svn], [$(SVN_BASE)])
@@ -29,7 +29,7 @@ DEFMOD([glib], [2.22.5],, [svn], [$(SVN_BASE)])
 DEFMOD([libxml2], [2.7.7],, [tar], [$(RESOURCE_URL_BASE)],,[--without-python])
 DEFMOD([liboil], [0.3.17],, [tar], [$(RESOURCE_URL_BASE)],,[--disable-glib --disable-gtk-doc])
 
-DEFMOD([gstreamer], [NLRELEASE-0.10.28], [gstreamer], [git], [$(NL_GIT_BASE_GST)],,,[./autogen.sh --] )
+DEFMOD([gstreamer], [NLRELEASE-0.10.28_NOEXAMPLES], [gstreamer], [git], [$(NL_GIT_BASE_GST)],,,[./autogen.sh --] )
 DEFMOD_COPT_ADD([gstreamer], [--enable-gtk-doc=no --disable-loadsave --disable-examples --disable-tests --disable-check --disable-net] )
 
 DEFMOD([x264], [HEAD],[x264],[git], [$(NL_GIT_BASE)projects/],,[])
@@ -58,7 +58,7 @@ ifeq ($(buildtype),windows-x86_32)
 PKG= libiconv gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) nltrans gmt_transcode gmt_dist
 endif
 
-ifeq ($(buildtype),darwin)
+ifeq ($(build_os),darwin)
 PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) nltrans gmt_transcode gmt_dist
 endif
 
