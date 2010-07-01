@@ -1,0 +1,23 @@
+<gstbuildpars>
+    <srcdirs>
+        <srcdir>bin</srcdir>
+        <srcdir>lib</srcdir>
+    </srcdirs>
+    <dstdirs>
+        <dstdir name="bindir">bin</dstdir>
+        <dstdir name="libdir">lib</dstdir>
+        <dstdir name="plugindir">lib</dstdir>
+    </dstdirs>
+    <group name="dummy_group">
+    </group>
+    <group name="gst_devel">
+        <item type="plain" dest="bindir">ffmpeg</item>
+    </group>
+    <deploy> 
+        <dgroup>gst_devel</dgroup>
+    </deploy>
+    <options>
+        <tardist nbundle="on" tar="on" sevenzip="off" gzip="off" bzip2="off" >gmt-gstdist</tardist> 
+        <cleanfirst/>
+    </options>
+</gstbuildpars>
