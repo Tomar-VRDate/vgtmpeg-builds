@@ -4,12 +4,22 @@
 
 ifeq ($(buildtype),linux-x86_64)
 	export build_os=linux
+	export build_arch=x86_64
+endif
+
+ifeq ($(buildtype),linux-x86_32)
+	export build_os=linux
 	export build_arch=x86_32
 endif
 
 ifeq ($(buildtype),windows-x86_32)
 	export build_os=windows
 	export build_arch=x86_32
+endif
+
+ifeq ($(buildtype),windows-x86_64)
+	export build_os=windows
+	export build_arch=x86_64
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
@@ -59,6 +69,18 @@ else
 	export BIN_PATH=${prefix}/bin
 	export LIBRARY_PATH=${prefix}/lib
 	export PATH:=$(BIN_PATH):$(PATH)
+endif
+
+ifeq ($(buildtype),linux-x86_32)
+	CONFIGURE_BASE_OPT += --host=i386-linux-gnu
+	export CFLAGS=-g -O2 -I${prefix}/include -m32
+	export LDFLAGS=-L${prefix}/lib -m32
+endif
+
+ifeq ($(buildtype),linux-x86_64)
+	CONFIGURE_BASE_OPT += --host=x86_64-linux-gnu
+	export CFLAGS=-g -O2 -I${prefix}/include -m64
+	export LDFLAGS=-L${prefix}/lib -m64
 endif
 
 ifeq ($(buildtype),darwin-x86_32)
