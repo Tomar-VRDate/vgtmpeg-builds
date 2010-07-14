@@ -32,7 +32,7 @@ ifeq ($(buildtype),darwin-x86_32)
 	export build_arch=x86_32
 endif
 
-topdir=$(PWD)
+topdir=$(shell pwd)
 buildbasedir=$(topdir)/${builddef}/$(buildtype)
 distdir=$(buildbasedir)/dist
 prefix=$(buildbasedir)/build
