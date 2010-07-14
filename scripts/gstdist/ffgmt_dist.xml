@@ -11,7 +11,7 @@
     <group name="dummy_group">
     </group>
     <group name="gst_devel">
-        <item type="plain" dest="bindir">ffmpeg</item>
+        <item type="bin" dest="bindir">ffmpeg</item>
     </group>
     <deploy> 
         <dgroup>gst_devel</dgroup>
