@@ -11,6 +11,7 @@ DEFMOD_COPT_ADD([ffmpeg], [--enable-gpl  --enable-nonfree --enable-libx264 --ena
 dnl DEFMOD_COPT_ADD([ffmpeg], [--enable-gpl  --disable-network --disable-muxers --enable-muxer=mp4 --disable-encoders --enable-encoder=mpeg4 ] )
 DEFMOD_COPT_ADD([faac], [--disable-shared ] )
 
+PKG =
 ifeq ($(buildtype),windows-x86_32)
     PKG = pthreads-w32
 endif
