@@ -10,7 +10,8 @@ ifeq ($(buildtype),linux-x86_32)
 endif
 
 ifeq ($(buildtype),windows-x86_32)
-	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-w32threads --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=i586-mingw32msvc- --enable-memalign-hack
+	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-w32threads --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=i586-mingw32msvc- --enable-memalign-hack  
+
 endif
 
 ifeq ($(buildtype),darwin-x86_32)
