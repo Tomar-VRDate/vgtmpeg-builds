@@ -11,6 +11,7 @@ endif
 
 ifeq ($(buildtype),windows-x86_32)
 	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-w32threads --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=i586-mingw32msvc- --enable-memalign-hack  
+    export LIBX264_OPT_LIBS= -lpthreadGC2 -lwsock32
 
 endif
 
