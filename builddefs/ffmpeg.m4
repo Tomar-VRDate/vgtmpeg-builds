@@ -16,7 +16,7 @@ ifeq ($(buildtype),windows-x86_32)
 endif
 
 ifeq ($(buildtype),darwin-x86_32)
-	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --arch=x86_32
+	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --arch=i386
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
