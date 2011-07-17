@@ -6,7 +6,7 @@ ifeq ($(buildtype),linux-x86_64)
 endif
 
 ifeq ($(buildtype),linux-x86_32)
-	FFMPEG_CONFIGURE_BASE_OPT += --enable-pthreads --arch=i386 
+	FFMPEG_CONFIGURE_BASE_OPT += --enable-pthreads --arch=x86_32 --enable-cross-compile --target-os=linux
 endif
 
 ifeq ($(buildtype),windows-x86_32)
@@ -16,7 +16,7 @@ ifeq ($(buildtype),windows-x86_32)
 endif
 
 ifeq ($(buildtype),darwin-x86_32)
-	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --arch=i386
+	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --arch=x86_32
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
