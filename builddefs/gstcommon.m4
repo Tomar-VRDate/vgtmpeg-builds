@@ -32,7 +32,6 @@ DEFMOD([liboil], [0.3.17],, [tar], [$(RESOURCE_URL_BASE)],,[--disable-glib --dis
 DEFMOD([gstreamer], [NLRELEASE-0.10.28_NOEXAMPLES], [gstreamer], [git], [$(NL_GIT_BASE_GST)],,,[./autogen.sh --] )
 DEFMOD_COPT_ADD([gstreamer], [--enable-gtk-doc=no --disable-loadsave --disable-examples --disable-tests --disable-check --disable-net] )
 
-DEFMOD([x264], [HEAD],[x264],[git], [$(NL_GIT_BASE)projects/],,[])
 dnl DEFMOD_COPT_ADD([x264], [--enable-shared --enable-pic])
 
 DEFMOD([gst_plugins_base], [NLRELEASE-0.10.28], [gst-plugins-base], [git], [$(NL_GIT_BASE_GST)],,[--enable-gtk-doc=no], [./autogen.sh --]  )
