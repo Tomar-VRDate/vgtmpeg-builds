@@ -9,7 +9,25 @@ DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./au
 DEFMOD_MAKECMD([ffgmt_dist],[GSTDISTCMD([ffgmt_dist])])
 DEFMOD_INSTCMD([ffgmt_dist],[:])
 
-DEFMOD_COPT_ADD([ffmpeg], [--enable-gpl  --enable-postproc --enable-nonfree --enable-libx264 --enable-libfaac --enable-libvpx --disable-network --disable-muxers --enable-muxer=mp4 --disable-encoders --enable-encoder=libvpx --enable-encoder=libfaac --enable-encoder=libx264 --enable-encoder=mpeg4 ] )
+opt = --enable-gpl --enable-nonfree
+opt += --disable-network  
+#opt += --disable-encoders
+#opt += --disable-muxers
+
+# enable encoders
+opt += --enable-libvpx --enable-encoder=libvpx 
+opt += --enable-libfaac --enable-encoder=libfaac 
+opt += --enable-libx264 --enable-encoder=libx264 
+opt += --enable-encoder=mpeg4
+
+# enable muxers
+#opt += --enable-muxer=avi 
+#opt += --enable-muxer=mp4 
+#opt += --enable-muxer=asf
+#opt += --enable-muxer=flv
+#opt += --enable-muxer=wav
+
+DEFMOD_COPT_ADD([ffmpeg], [ $(opt) ] )
 dnl DEFMOD_COPT_ADD([ffmpeg], [--enable-gpl  --disable-network --disable-muxers --enable-muxer=mp4 --disable-encoders --enable-encoder=mpeg4 ] )
 DEFMOD_COPT_ADD([faac], [--disable-shared ] )
 
