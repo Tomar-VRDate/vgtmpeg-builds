@@ -18,6 +18,7 @@ opt += --disable-network
 opt += --enable-libvpx --enable-encoder=libvpx 
 opt += --enable-libfaac --enable-encoder=libfaac 
 opt += --enable-libx264 --enable-encoder=libx264 
+opt += --enable-libvorbis --enable-encoder=libvorbis --disable-encoder=vorbis
 opt += --enable-encoder=mpeg4
 
 # enable muxers
@@ -36,6 +37,6 @@ ifeq ($(buildtype),windows-x86_32)
     PKG = pthreads-w32
 endif
 
-PKG += libvpx x264 faac ffmpeg ffgmt_dist
+PKG += libogg libvorbis libvpx x264 faac ffmpeg ffgmt_dist
 
 
