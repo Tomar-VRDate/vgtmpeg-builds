@@ -22,8 +22,8 @@ DEFMOD([libiconv], [1.13.1],, [tar], [$(RESOURCE_URL_BASE)])
 dnl DEFMOD([libogg], [1.2.0],, [svn], [$(SVN_BASE)])
 dnl DEFMOD([libvorbis], [1.3.1],, [svn], [$(SVN_BASE)])
 
-DEFMOD([libogg], [1.3.0],[libogg], [git],    [$(NL_GIT_BASE_LIBS)])
-DEFMOD([libvorbis], [1.3.2],[libvorbis], [git], [$(NL_GIT_BASE_LIBS)]) 
+DEFMOD([libogg], [1.3.0],[libogg], [git],    [$(NL_GIT_BASE_LIBS)],,[--disable-shared])
+DEFMOD([libvorbis], [1.3.2],[libvorbis], [git], [$(NL_GIT_BASE_LIBS)],,[--disable-shared]) 
 
 DEFMOD([faac], [1.28],, [svn], [$(SVN_BASE)],,[--without-mp4v2])
 DEFMOD([gettext], [0.18.1.1],, [svn], [$(SVN_BASE)])
