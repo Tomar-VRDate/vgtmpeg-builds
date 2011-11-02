@@ -19,5 +19,6 @@
     <options>
         <tardist nbundle="on" tar="on" sevenzip="off" gzip="off" bzip2="off" >gmt-gstdist</tardist> 
         <cleanfirst/>
+        <!-- <keeptemp/> -->
     </options>
 </gstbuildpars>
