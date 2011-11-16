@@ -1,4 +1,3 @@
-FFMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix)
 LAME_VERSION = master
 LAME_BASE = BB_GIT_BASE
 LAME_SRC_BASE = lame
