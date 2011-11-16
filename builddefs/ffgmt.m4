@@ -7,12 +7,7 @@ include([builddefs/lame.m4])
 
 
 DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )
-ifeq ($(buildtype),linux-x86_64)
-    DEFMOD_MAKECMD([ffgmt_dist],[GSTDISTCMD([ffgmt_dist_linux],[ffgmt_dist])])
-else
-    DEFMOD_MAKECMD([ffgmt_dist],[GSTDISTCMD([ffgmt_dist],[ffgmt_dist])])
-endif
-    
+DEFMOD_MAKECMD([ffgmt_dist],[GSTDISTCMD([ffgmt_dist],[ffgmt_dist])])
 DEFMOD_INSTCMD([ffgmt_dist],[:])
 
 opt = --enable-gpl --enable-nonfree
