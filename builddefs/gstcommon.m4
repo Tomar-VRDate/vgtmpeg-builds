@@ -7,6 +7,7 @@ SVN_BASE=--username svnuser --password 19761976 http://nelalabs.com/svn/nelapack
 NL_GIT_BASE=ngit@nelalabs.com:
 NL_GIT_BASE_GST=ngit@nelalabs.com:gstreamer/
 NL_GIT_BASE_LIBS=$(NL_GIT_BASE)libs/
+BB_GIT_BASE=git@bitbucket.org:concalma/
 
 DEFMOD_DEFAULT_COPT( [$(CONFIGURE_BASE_OPT)] )
 
