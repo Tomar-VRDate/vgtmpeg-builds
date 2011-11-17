@@ -4,6 +4,7 @@ include([builddefs/libvpx.m4])
 include([builddefs/pthreads-w32.m4])
 include([builddefs/x264.m4])
 include([builddefs/lame.m4])
+include([builddefs/libdvdread.m4])
 
 
 DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )
@@ -39,6 +40,6 @@ ifeq ($(buildtype),windows-x86_32)
     PKG = pthreads-w32
 endif
 
-PKG += lame libogg libvorbis libvpx x264 faac ffmpeg ffgmt_dist
+PKG += libdvdread lame libogg libvorbis libvpx x264 faac ffmpeg ffgmt_dist
 
 
