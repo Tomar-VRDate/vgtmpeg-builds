@@ -2,6 +2,12 @@
 # native
 # win32
 
+ifdef debug
+	coptflags = -g3 -O0
+else
+	coptflags = -g -O3
+endif
+
 ifeq ($(buildtype),linux-x86_64)
 	export build_os=linux
 	export build_arch=x86_64
@@ -80,7 +86,7 @@ endif
 
 ifeq ($(buildtype),linux-x86_64)
 	CONFIGURE_BASE_OPT += --host=x86_64-linux-gnu
-	export CFLAGS=-g -O2 -I${prefix}/include -m64
+	export CFLAGS=${coptflags}  -I${prefix}/include -m64
 	export LDFLAGS=-L${prefix}/lib -m64
 endif
 
