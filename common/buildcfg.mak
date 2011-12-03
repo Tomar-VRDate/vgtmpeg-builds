@@ -80,7 +80,7 @@ endif
 ifeq ($(buildtype),linux-x86_32)
 	export CC=gcc -m32
 	CONFIGURE_BASE_OPT += --host=i386-linux-gnu
-	export CFLAGS= ${coptflags} -I${prefix}/include -m32
+	export CFLAGS= ${coptflags} -I${prefix}/include -m32 -msse -msse2
 	export LDFLAGS=-L${prefix}/lib -m32
 endif
 
