@@ -58,8 +58,8 @@ ifeq ($(buildtype),windows-x86_32)
 	export PKG_CONFIG_LIBDIR=${prefix}/lib/pkgconfig/
 	export PKG_CONFIG_PATH=${PKG_CONFIG_LIBDIR}
 	export CONFIG_SITE=$(pwd)/config.site
-	export CFLAGS=-g -O2 -I${prefix}/include -D_WIN32_WINNT=0x0501
-	export CXXFLAGS=-g -O2 -I${prefix}/include
+	export CFLAGS= ${coptflags} -I${prefix}/include -D_WIN32_WINNT=0x0501
+	export CXXFLAGS= ${coptflags}  -I${prefix}/include
 	export LDFLAGS=-L${prefix}/lib
 	export INCLUDE_PATH=${prefix}/include
 	export LIBRARY_PATH=${prefix}/lib
@@ -68,8 +68,8 @@ else
 	CONFIGURE_BASE_OPT= --prefix=$(prefix)
 	export PKG_CONFIG_LIBDIR=${prefix}/lib/pkgconfig/
 	export PKG_CONFIG_PATH=${PKG_CONFIG_LIBDIR}
-	export CFLAGS=-g -O2 -I${prefix}/include 
-	export CXXFLAGS=-g -O2 -I${prefix}/include
+	export CFLAGS= ${coptflags}  -I${prefix}/include 
+	export CXXFLAGS= ${coptflags}  -I${prefix}/include
 	export LDFLAGS=-L${prefix}/lib
 	export INCLUDE_PATH=${prefix}/include
 	export BIN_PATH=${prefix}/bin
@@ -80,7 +80,7 @@ endif
 ifeq ($(buildtype),linux-x86_32)
 	export CC=gcc -m32
 	CONFIGURE_BASE_OPT += --host=i386-linux-gnu
-	export CFLAGS=-g -O2 -I${prefix}/include -m32
+	export CFLAGS= ${coptflags} -I${prefix}/include -m32
 	export LDFLAGS=-L${prefix}/lib -m32
 endif
 
@@ -92,12 +92,12 @@ endif
 
 ifeq ($(buildtype),darwin-x86_32)
 	CONFIGURE_BASE_OPT += --host=i386-apple-darwin10
-	export CFLAGS=-g -O2 -I${prefix}/include -arch i386
+	export CFLAGS= ${coptflags} -I${prefix}/include -arch i386
 	export LDFLAGS=-L${prefix}/lib -arch i386
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
 	CONFIGURE_BASE_OPT += --host=x86_64-apple-darwin10
-	export CFLAGS=-g -O2 -I${prefix}/include -arch x86_64
+	export CFLAGS= ${coptflags}  -I${prefix}/include -arch x86_64
 	export LDFLAGS=-L${prefix}/lib -arch x86_64
 endif
