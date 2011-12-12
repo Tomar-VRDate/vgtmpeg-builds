@@ -1,5 +1,5 @@
 include(`builddefs/gstcommon.m4')
-include([builddefs/ffmpeg.m4])
+include([builddefs/vgtmpeg.m4])
 include([builddefs/libvpx.m4])
 include([builddefs/pthreads-w32.m4])
 include([builddefs/x264.m4])
@@ -31,7 +31,7 @@ opt += --enable-libmp3lame --enable-encoder=libmp3lame
 #opt += --enable-muxer=flv
 #opt += --enable-muxer=wav
 
-DEFMOD_COPT_ADD([ffmpeg], [ $(opt) ] )
+DEFMOD_COPT_ADD([vgtmpeg], [ $(opt) ] )
 dnl DEFMOD_COPT_ADD([ffmpeg], [--enable-gpl  --disable-network --disable-muxers --enable-muxer=mp4 --disable-encoders --enable-encoder=mpeg4 ] )
 DEFMOD_COPT_ADD([faac], [--disable-shared ] )
 
@@ -40,6 +40,6 @@ ifeq ($(buildtype),windows-x86_32)
     PKG = pthreads-w32
 endif
 
-PKG += libdvdread lame libogg libvorbis libvpx x264 faac ffmpeg ffgmt_dist
+PKG += libdvdread lame libogg libvorbis libvpx x264 faac vgtmpeg ffgmt_dist
 
 

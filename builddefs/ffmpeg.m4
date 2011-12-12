@@ -22,6 +22,6 @@ ifeq ($(buildtype),darwin-x86_64)
 	FFMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads  --arch=x86_64
 endif
 
-DEFMOD([ffmpeg],[master], [ffmpeg], [git], [$(NL_GIT_BASE)projects/] )
+DEFMOD([ffmpeg],[master], [ffmpeg], [git], [$(BB_GIT_BASE)] )
 DEFMOD_COPT([ffmpeg],[$(FFMPEG_CONFIGURE_BASE_OPT)])
 
