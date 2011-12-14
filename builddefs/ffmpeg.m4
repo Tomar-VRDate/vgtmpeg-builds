@@ -1,4 +1,4 @@
-FFMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --disable-doc
+FFMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) 
 
 ifeq ($(buildtype),linux-x86_64)
 	FFMPEG_CONFIGURE_BASE_OPT += --enable-pthreads --arch=x86_64

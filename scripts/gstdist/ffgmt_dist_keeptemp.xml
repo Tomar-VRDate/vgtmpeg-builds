@@ -1,17 +1,23 @@
 <gstbuildpars>
     <srcdirs>
-        <srcdir>bin</srcdir>
-        <srcdir>lib</srcdir>
+        <srcdir>build/bin</srcdir>
+        <srcdir>build/lib</srcdir>
+        <srcdir>src/vgtmpeg</srcdir>
+        <srcdir>src/vgtmpeg/doc</srcdir>
     </srcdirs>
     <dstdirs>
         <dstdir name="bindir">bin</dstdir>
         <dstdir name="libdir">lib</dstdir>
         <dstdir name="plugindir">lib</dstdir>
+        <dstdir name="doc">doc</dstdir>
     </dstdirs>
     <group name="dummy_group">
     </group>
     <group name="gst_devel">
         <item type="bin" dest="bindir">vgtmpeg</item>
+        <item type="plain" dest="doc">vgtmpeg.html</item>
+        <item type="plain" dest="doc">README</item>
+        <item type="plain" dest="doc">README.md</item>
     </group>
     <deploy> 
         <dgroup>gst_devel</dgroup>

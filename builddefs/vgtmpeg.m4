@@ -1,4 +1,4 @@
-VGTMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --disable-doc
+VGTMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --enable-doc
 
 ifeq ($(buildtype),linux-x86_64)
 	VGTMPEG_CONFIGURE_BASE_OPT += --enable-pthreads --arch=x86_64
