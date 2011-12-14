@@ -1,7 +1,7 @@
 <gstbuildpars>
     <srcdirs>
-        <srcdir>bin</srcdir>
-        <srcdir>lib</srcdir>
+        <srcdir>build/bin</srcdir>
+        <srcdir>build/lib</srcdir>
     </srcdirs>
     <dstdirs>
         <dstdir name="bindir">bin</dstdir>
