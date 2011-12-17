@@ -9,8 +9,9 @@ ifeq ($(buildtype),linux-x86_32)
 endif
 
 ifeq ($(buildtype),windows-x86_32)
-	VGTMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=$(tools_prefix) --enable-memalign-hack  --extra-cflags=-DPTW32_STATIC_LIB
-    export LIBX264_OPT_LIBS= -lpthreadGC2 
+	VGTMPEG_CONFIGURE_BASE_OPT +=  --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=$(tools_prefix) --enable-memalign-hack
+dnl	VGTMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=$(tools_prefix) --enable-memalign-hack  --extra-cflags=-DPTW32_STATIC_LIB
+dnl    export LIBX264_OPT_LIBS= -lpthreadGC2 
 endif
 
 ifeq ($(buildtype),windows-x86_64)
