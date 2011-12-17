@@ -40,6 +40,10 @@ ifeq ($(buildtype),windows-x86_32)
     PKG = pthreads-w32
 endif
 
+ifeq ($(buildtype),windows-x86_64)
+    PKG = pthreads-w32
+endif
+
 PKG += libdvdread lame libogg libvorbis libvpx x264 faac vgtmpeg ffgmt_dist
 
 

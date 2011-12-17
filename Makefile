@@ -35,13 +35,13 @@ dobuild: $(MYBUILD)
 	$($*_makecmd) clean; \
 	cd ../..;
 
-%_make: prereq
+%_make: prereq %_tools
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
 	$($*_makecmd); \
 	cd ../..;
 
-%_install:
+%_install: %_tools
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
 	$($*_instcmd); \
@@ -52,7 +52,7 @@ dobuild: $(MYBUILD)
 	rm -rf $(srcdir)/$($*_basedir); \
 	fi;
 
-%_config: 
+%_config: %_tools
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
 	if [ ! -f Makefile ]; then \
@@ -60,11 +60,16 @@ dobuild: $(MYBUILD)
 	fi; \
 	cd ../..;
 
-%_forceconfig:
+%_forceconfig: %_tools
 	set -e; \
 	cd $(srcdir)/$($*_basedir); \
 	$($*_confcmd) $(CCOPT) $($*_copt); \
 	cd ../..;
+
+%_tools:
+	$(eval $(call $*_set_tools)) 
+	#env
+	
 
 tags:
 	find . -name "*.[ch]" | xargs ctags -a;
