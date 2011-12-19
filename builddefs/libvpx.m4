@@ -19,12 +19,12 @@ endif
 
 ifeq ($(buildtype),darwin-x86_32)
 	LIBVPX_CONFIGURE_BASE_OPT +=  --target=x86-darwin9-gcc
-    LIBVPX_VERSION=v0.9.7-p1
+    LIBVPX_VERSION=v0.9.7-nl
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
 	LIBVPX_CONFIGURE_BASE_OPT +=  --target=x86_64-darwin9-gcc
-    LIBVPX_VERSION=v0.9.7-p1
+    LIBVPX_VERSION=v0.9.7-nl
 endif
 
 DEFMOD([libvpx], [$(LIBVPX_VERSION)],[libvpx],[git], [$(NL_GIT_BASE)projects/],,[])
