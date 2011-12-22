@@ -12,7 +12,7 @@ DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./au
 DEFMOD_MAKECMD([ffgmt_dist],[GSTDISTCMD([ffgmt_dist],[ffgmt_dist])])
 DEFMOD_INSTCMD([ffgmt_dist],[:])
 
-opt = --enable-gpl --enable-nonfree
+opt = --enable-gpl --enable-nonfree --disable-shared
 opt += --disable-network  
 #opt += --disable-encoders
 #opt += --disable-muxers
@@ -34,7 +34,7 @@ opt += --enable-libmp3lame --enable-encoder=libmp3lame
 #opt += --enable-muxer=wav
 
 DEFMOD_COPT_ADD([vgtmpeg], [ $(opt) ] )
-dnl DEFMOD_COPT_ADD([ffmpeg], [--enable-gpl  --disable-network --disable-muxers --enable-muxer=mp4 --disable-encoders --enable-encoder=mpeg4 ] )
+dnl DEFMOD_COPT_ADD([ffmpeg], [--disable-shared --enable-gpl  --disable-network --disable-muxers --enable-muxer=mp4 --disable-encoders --enable-encoder=mpeg4 ] )
 DEFMOD_COPT_ADD([faac], [--disable-shared ] )
 
 PKG =
