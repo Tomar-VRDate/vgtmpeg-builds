@@ -15,7 +15,7 @@ endif
 DEFMOD([xvid],[$(XVID_VERSION)],[$(XVID_SRC_BASE)],[$(XVID_GET_TYPE)],[$(BB_GIT_BASE)],[$(XVID_COPT)])
 DEFMOD_BUILD_BASEDIR([xvid],[$(XVID_BUILD_BASE_DIR]))
 DEFMOD_MAKECMD([xvid],[$(MAKE) $(XVID_STATIC_LIB)])
-DEFMOD_INSTCMD([xvid],[mkdir -p $(prefix)/lib; mkdir -p $(prefix)/bin; install -m 644 =build/$(XVID_STATIC_LIB) $(prefix)/lib/; install -m 644 ../../src/xvid.h $(prefix)/include/xvid.h])    
+DEFMOD_INSTCMD([xvid],[mkdir -p $(prefix)/lib; mkdir -p $(prefix)/include; install -m 644 =build/$(XVID_STATIC_LIB) $(prefix)/lib/; install -m 644 ../../src/xvid.h $(prefix)/include/xvid.h])    
 
 ifeq ($(buildtype),linux-x86_64)
 endif
