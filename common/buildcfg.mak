@@ -129,7 +129,7 @@ COMMON_LDFLAGS=-L${prefix}/lib $(LDFLAGS_ADD)
 COMMON_INCLUDE_PATH=${prefix}/include
 COMMON_BIN_PATH=${prefix}/bin
 COMMON_LIBRARY_PATH=${prefix}/lib
-COMMON_PATH:=$(BIN_PATH):$(PATH)
+COMMON_PATH:=$(COMMON_BIN_PATH):$(PATH)
 COMMON_CROSS=$(tools_prefix)
 
 #set tools

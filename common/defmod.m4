@@ -18,6 +18,7 @@ define([GSTDISTCMD], [./gst_dist_builder --pars $(topdir)/scripts/gstdist/$1.xml
 
 define([DEFMOD_VER], [$1_version=$2]) dnl
 define([DEFMOD_BASEDIR], [ifelse( [], [$2], [$1_basedir=$1-$($1_version)], [$1_basedir=$2])]) dnl
+define([DEFMOD_BUILD_BASEDIR], [ifelse( [], [$2], [$1_build_basedir=$1-$($1_version)], [$1_build_basedir=$2])]) dnl
 define([DEFMOD_GETTYPE], [$1_gettype=$2]) dnl
 define([DEFMOD_LOC],     [$1_loc=$2]) dnl
 define([DEFMOD_COPT],    [ifelse( [], [$2], [$1_copt=$(default_copt)], [$1_copt=$2])] ) dnl
@@ -50,6 +51,7 @@ endef
 dnl DEFMOD ( libname, version, [basedir], type, url, [copt_default], [copt_extra] )
 define([DEFMOD], [DEFMOD_VER($1,$2)
 DEFMOD_BASEDIR($1,$3)
+DEFMOD_BUILD_BASEDIR($1,$3)
 DEFMOD_GETTYPE($1,$4)
 DEFMOD_LOC($1,$5)
 DEFMOD_COPT($1,$6)

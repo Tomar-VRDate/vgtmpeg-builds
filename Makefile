@@ -31,19 +31,19 @@ dobuild: $(MYBUILD)
 
 %_clean:
 	set -e; \
-	cd $(srcdir)/$($*_basedir); \
+	cd $(srcdir)/$($*_build_basedir); \
 	$($*_makecmd) clean; \
 	cd ../..;
 
 %_make: prereq %_tools
 	set -e; \
-	cd $(srcdir)/$($*_basedir); \
+	cd $(srcdir)/$($*_build_basedir); \
 	$($*_makecmd); \
 	cd ../..;
 
 %_install: %_tools
 	set -e; \
-	cd $(srcdir)/$($*_basedir); \
+	cd $(srcdir)/$($*_build_basedir); \
 	$($*_instcmd); \
 	cd ../..;
 
@@ -54,7 +54,7 @@ dobuild: $(MYBUILD)
 
 %_config: %_tools
 	set -e; \
-	cd $(srcdir)/$($*_basedir); \
+	cd $(srcdir)/$($*_build_basedir); \
 	if [ ! -f Makefile ]; then \
 	$($*_confcmd) $(CCOPT) $($*_copt); \
 	fi; \
@@ -62,7 +62,7 @@ dobuild: $(MYBUILD)
 
 %_forceconfig: %_tools
 	set -e; \
-	cd $(srcdir)/$($*_basedir); \
+	cd $(srcdir)/$($*_build_basedir); \
 	$($*_confcmd) $(CCOPT) $($*_copt); \
 	cd ../..;
 

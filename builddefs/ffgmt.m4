@@ -5,6 +5,7 @@ include([builddefs/pthreads-w32.m4])
 include([builddefs/x264.m4])
 include([builddefs/lame.m4])
 include([builddefs/libdvdread.m4])
+include([builddefs/xvid.m4])
 
 
 DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )
@@ -18,6 +19,7 @@ opt += --disable-network
 
 # enable encoders
 opt += --enable-libvpx --enable-encoder=libvpx 
+opt += --enable-libxvid --enable-encoder=libxvid
 opt += --enable-libfaac --enable-encoder=libfaac 
 opt += --enable-libx264 --enable-encoder=libx264 
 opt += --enable-libvorbis --enable-encoder=libvorbis --disable-encoder=vorbis
@@ -44,6 +46,6 @@ PKG =
 #    PKG = pthreads-w32
 #endif
 
-PKG += libdvdread lame libogg libvorbis libvpx x264 faac vgtmpeg ffgmt_dist
+PKG += xvid libdvdread lame libogg libvorbis libvpx x264 faac vgtmpeg ffgmt_dist
 
 
