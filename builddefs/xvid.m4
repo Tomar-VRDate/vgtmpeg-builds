@@ -24,11 +24,11 @@ ifeq ($(buildtype),linux-x86_32)
 endif
 
 ifeq ($(buildtype),windows-x86_32)
-    DEFMOD_COPT_ADD([xvid],[--disable-pthread])
+dnl    DEFMOD_COPT_ADD([xvid],[--disable-pthread])
 endif
 
 ifeq ($(buildtype),windows-x86_64)
-    DEFMOD_COPT_ADD([xvid],[--disable-pthread])
+dnl    DEFMOD_COPT_ADD([xvid],[--disable-pthread])
 endif
 
 ifeq ($(buildtype),darwin-x86_32)

@@ -38,13 +38,13 @@ dnl DEFMOD_COPT_ADD([ffmpeg], [--disable-shared --enable-gpl  --disable-network 
 DEFMOD_COPT_ADD([faac], [--disable-shared ] )
 
 PKG =
-#ifeq ($(buildtype),windows-x86_32)
-#    PKG = pthreads-w32
-#endif
-#
-#ifeq ($(buildtype),windows-x86_64)
-#    PKG = pthreads-w32
-#endif
+ifeq ($(buildtype),windows-x86_32)
+    PKG = pthreads-w32
+endif
+
+ifeq ($(buildtype),windows-x86_64)
+    PKG = pthreads-w32
+endif
 
 PKG += xvid libdvdread lame libogg libvorbis libvpx x264 faac vgtmpeg ffgmt_dist
 
