@@ -5,6 +5,7 @@ include([builddefs/pthreads-w32.m4])
 include([builddefs/x264.m4])
 include([builddefs/lame.m4])
 include([builddefs/libdvdread.m4])
+include([builddefs/libbluray.m4])
 include([builddefs/xvid.m4])
 
 
@@ -46,6 +47,6 @@ ifeq ($(buildtype),windows-x86_64)
     PKG = pthreads-w32
 endif
 
-PKG += xvid libdvdread lame libogg libvorbis libvpx x264 faac vgtmpeg ffgmt_dist
+PKG += xvid libbluray libdvdread lame libogg libvorbis libvpx x264 faac vgtmpeg ffgmt_dist
 
 
