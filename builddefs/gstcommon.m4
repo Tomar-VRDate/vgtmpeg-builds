@@ -8,6 +8,10 @@ NL_GIT_BASE=ngit@nelalabs.com:
 NL_GIT_BASE_GST=ngit@nelalabs.com:gstreamer/
 NL_GIT_BASE_LIBS=$(NL_GIT_BASE)libs/
 BB_GIT_BASE=git@bitbucket.org:concalma/
+dnl overrides for bb git hosting
+NL_GIT_BASE=$(BB_GIT_BASE)
+NL_GIT_BASE_GST=$(BB_GIT_BASE)
+NL_GIT_BASE_LIBS=$(BB_GIT_BASE)
 
 DEFMOD_DEFAULT_COPT( [$(CONFIGURE_BASE_OPT)] )
 
@@ -26,7 +30,7 @@ dnl DEFMOD([libvorbis], [1.3.1],, [svn], [$(SVN_BASE)])
 DEFMOD([libogg], [1.3.0],[libogg], [git],    [$(NL_GIT_BASE_LIBS)],,[--disable-shared])
 DEFMOD([libvorbis], [1.3.2],[libvorbis], [git], [$(NL_GIT_BASE_LIBS)],,[--disable-shared]) 
 
-DEFMOD([faac], [1.28],, [svn], [$(SVN_BASE)],,[--without-mp4v2])
+dnl DEFMOD([faac], [1.28],[faac], [git], [$(NL_GIT_BASE)],,[--without-mp4v2])
 DEFMOD([gettext], [0.18.1.1],, [svn], [$(SVN_BASE)])
 DEFMOD_COPT_ADD([gettext], [--disable-csharp --without-emacs --disable-java --disable-native-java] )
 

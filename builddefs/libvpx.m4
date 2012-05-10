@@ -25,7 +25,7 @@ ifeq ($(buildtype),darwin-x86_64)
 	LIBVPX_CONFIGURE_BASE_OPT +=  --target=x86_64-darwin9-gcc
 endif
 
-DEFMOD([libvpx], [$(LIBVPX_VERSION)],[libvpx],[git], [$(NL_GIT_BASE)projects/],,[])
+DEFMOD([libvpx], [$(LIBVPX_VERSION)],[libvpx],[git], [$(NL_GIT_BASE)],,[])
 DEFMOD_COPT([libvpx],[$(LIBVPX_CONFIGURE_BASE_OPT)])
 
 #platform depending environment tweaks
