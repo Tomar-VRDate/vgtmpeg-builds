@@ -28,6 +28,9 @@ opt += --enable-libvorbis --enable-encoder=libvorbis --disable-encoder=vorbis
 opt += --enable-encoder=mpeg4
 opt += --enable-libmp3lame --enable-encoder=libmp3lame
 
+# enable protocols
+opt += --enable-protocol=bluray --enable-libbluray
+
 # enable muxers
 #opt += --enable-muxer=avi 
 #opt += --enable-muxer=mp4 

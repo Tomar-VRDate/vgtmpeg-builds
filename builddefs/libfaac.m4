@@ -1,10 +1,10 @@
-LAME_VERSION = master
-LAME_BASE = BB_GIT_BASE
-LAME_SRC_BASE = faac
-LAME_GET_TYPE = git
-LAME_COPT =  $(CONFIGURE_BASE_OPT) --without-mp4v2
+FAAC_VERSION = master
+FAAC_BASE = BB_GIT_BASE
+FAAC_SRC_BASE = faac
+FAAC_GET_TYPE = git
+FAAC_COPT =  $(CONFIGURE_BASE_OPT) --without-mp4v2
 
-DEFMOD([faac],[$(LAME_VERSION)],[$(LAME_SRC_BASE)],[$(LAME_GET_TYPE)],[$(BB_GIT_BASE)],[$(LAME_COPT)])
+DEFMOD([faac],[$(FAAC_VERSION)],[$(FAAC_SRC_BASE)],[$(FAAC_GET_TYPE)],[$(BB_GIT_BASE)],[$(FAAC_COPT)])
 DEFMOD_CONF_CMD([faac],[echo timestamp > stamp-h.in 2> /dev/null; ./configure])
 
 ifeq ($(buildtype),linux-x86_64)
