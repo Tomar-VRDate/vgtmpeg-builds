@@ -2,7 +2,7 @@ LIBBLURAY_VERSION = master
 LIBBLURAY_BASE = BB_GIT_BASE
 LIBBLURAY_SRC_BASE = libbluray
 LIBBLURAY_GET_TYPE = git
-LIBBLURAY_COPT =  $(CONFIGURE_BASE_OPT) --disable-shared --enable-static 
+LIBBLURAY_COPT =  $(CONFIGURE_BASE_OPT) --disable-shared --enable-static --without-libxml2 --without-freetype --disable-examples
 
 DEFMOD([libbluray],[$(LIBBLURAY_VERSION)],[$(LIBBLURAY_SRC_BASE)],[$(LIBBLURAY_GET_TYPE)],[$(BB_GIT_BASE)],[$(LIBBLURAY_COPT)])
 DEFMOD_CONF_CMD([libbluray],[./bootstrap; ./configure])
