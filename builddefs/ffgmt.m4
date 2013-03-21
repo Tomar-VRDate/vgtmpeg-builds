@@ -20,7 +20,7 @@ opt += --disable-network
 #opt += --disable-muxers
 
 # enable encoders
-opt += --enable-libvpx --enable-encoder=libvpx 
+opt += --enable-libvpx --enable-encoder=libvpx_vp8 
 opt += --enable-libxvid --enable-encoder=libxvid
 opt += --enable-libfaac --enable-encoder=libfaac 
 opt += --enable-libx264 --enable-encoder=libx264 
