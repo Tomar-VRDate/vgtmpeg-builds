@@ -1,5 +1,5 @@
 LIBVPX_CONFIGURE_BASE_OPT = --prefix=$(prefix) --as=yasm 
-LIBVPX_VERSION = v1.1.0
+LIBVPX_VERSION = v1.0.0 
 
 ifeq ($(buildtype),linux-x86_64)
 	LIBVPX_CONFIGURE_BASE_OPT +=  --target=x86_64-linux-gcc
