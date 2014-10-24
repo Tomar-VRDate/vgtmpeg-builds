@@ -27,6 +27,6 @@ ifeq ($(buildtype),darwin-x86_64)
 	VGTMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads  --arch=x86_64
 endif
 
-DEFMOD([vgtmpeg],[vgtmpeg1.4.64], [vgtmpeg], [git], [$(BB_GIT_BASE)] )
+DEFMOD([vgtmpeg],[vgtmpeg1.4.64.1], [vgtmpeg], [git], [$(BB_GIT_BASE)] )
 DEFMOD_COPT([vgtmpeg],[$(VGTMPEG_CONFIGURE_BASE_OPT)])
 
