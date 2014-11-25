@@ -3,9 +3,9 @@
 # win32
 
 ifdef debug
-	coptflags = -g3 -O0
+	coptflags = -g3 -O0 
 else
-	coptflags = -g -O3
+	coptflags = -g -O3 
 endif
 
 ifeq ($(buildtype),linux-x86_64)
