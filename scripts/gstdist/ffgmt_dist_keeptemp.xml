@@ -16,7 +16,7 @@
     <group name="gst_devel">
         <item type="bin" dest="bindir">vgtmpeg</item>
         <item type="plain" dest="doc">vgtmpeg.html</item>
-        <item type="plain" dest="doc">README</item>
+        <item type="plain" dest="doc">README.md</item>
         <item type="plain" dest="doc">CHANGELOG</item>
     </group>
     <deploy> 
