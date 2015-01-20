@@ -122,7 +122,7 @@ endif
 CONFIGURE_BASE_OPT= --prefix=$(prefix) --build=$(build) --host=$(host)
 
 COMMON_PKG_CONFIG_LIBDIR=${prefix}/lib/pkgconfig/
-COMMON_PKG_CONFIG_PATH=${PKG_CONFIG_LIBDIR}
+COMMON_PKG_CONFIG_PATH=${COMMON_PKG_CONFIG_LIBDIR}
 COMMON_CFLAGS= ${coptflags}  -I${prefix}/include  $(CFLAGS_ADD)
 COMMON_CXXFLAGS= ${coptflags}  -I${prefix}/include $(CFLAGS_ADD)
 COMMON_LDFLAGS=-L${prefix}/lib $(LDFLAGS_ADD)
