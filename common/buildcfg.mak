@@ -134,6 +134,7 @@ COMMON_CROSS=$(tools_prefix)
 
 #set tools
 COMMON_CC=$(tools_prefix)gcc
+COMMON_CXX=$(tools_prefix)g++
 COMMON_AR=$(tools_prefix)ar
 COMMON_AS=$(tools_prefix)as
 COMMON_RC=$(tools_prefix)windres
