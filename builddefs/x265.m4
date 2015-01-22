@@ -6,7 +6,7 @@ DEFMOD([x265], [HEAD],[x265],[git], [$(NL_GIT_BASE)],,[])
 DEFMOD_MAKECMD([x265], [cd build/linux; $(MAKE)])
 DEFMOD_INSTCMD([x265], [cd build/linux; $(MAKE) install])
 
-CMAKE_DEFS += -DCMAKE_INSTALL_PREFIX:PATH=$(prefix)
+CMAKE_DEFS += -DCMAKE_INSTALL_PREFIX:PATH=$(prefix) -DENABLE_SHARED:BOOL=OFF -DENABLE_CLI:BOOL=OFF
 
 ifeq ($(buildtype),linux-x86_64)
 	X265_CONFIGURE_BASE_OPT +=  
@@ -33,11 +33,11 @@ endif
 
 ifeq ($(buildtype),darwin-x86_32)
 	X265_CONFIGURE_BASE_OPT += 
-    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS) -g "Unix Makefiles" ../../source])
+    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS) -DCMAKE_OSX_ARCHITECTURES:STRING=i386 -DENABLE_ASSEMBLY:BOOL=OFF -g "Unix Makefiles" ../../source])
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
 	X265_CONFIGURE_BASE_OPT += 
-    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS) -g "Unix Makefiles" ../../source])
+    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS)  -DCMAKE_OSX_ARCHITECTURES:STRING=x86_64 -g "Unix Makefiles" ../../source])
 endif
 DEFMOD_COPT([x265],[ ])

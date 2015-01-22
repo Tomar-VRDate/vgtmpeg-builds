@@ -68,7 +68,7 @@ dobuild: $(MYBUILD)
 
 %_tools:
 	$(eval $(call $*_set_tools)) 
-	#env
+	env
 	
 
 tags:
