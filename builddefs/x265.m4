@@ -33,7 +33,7 @@ endif
 
 ifeq ($(buildtype),darwin-x86_32)
 	X265_CONFIGURE_BASE_OPT += 
-    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS) -DCMAKE_OSX_ARCHITECTURES:STRING=i386 -DENABLE_ASSEMBLY:BOOL=OFF -g "Unix Makefiles" ../../source])
+    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS) -DCMAKE_OSX_ARCHITECTURES:STRING=i386 -DENABLE_ASSEMBLY:BOOL=ON  -g "Unix Makefiles" ../../source])
 endif
 
 ifeq ($(buildtype),darwin-x86_64)
