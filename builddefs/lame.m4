@@ -2,7 +2,7 @@ LAME_VERSION = master
 LAME_BASE = BB_GIT_BASE
 LAME_SRC_BASE = lame
 LAME_GET_TYPE = git
-LAME_COPT =  $(CONFIGURE_BASE_OPT) --disable-shared --enable-static --disable-frontend
+LAME_COPT =  $(CONFIGURE_BASE_OPT) --disable-shared --enable-static --disable-frontend --disable-decoder
 
 DEFMOD([lame],[$(LAME_VERSION)],[$(LAME_SRC_BASE)],[$(LAME_GET_TYPE)],[$(BB_GIT_BASE)],[$(LAME_COPT)])
 
@@ -13,11 +13,11 @@ ifeq ($(buildtype),linux-x86_32)
 endif
 
 ifeq ($(buildtype),windows-x86_32)
-    DEFMOD_TOOLADD([lame],[CFLAGS],[ -DFORCEINLINE= ]) 
+dnl DEFMOD_TOOLADD([lame],[CFLAGS],[ -DFORCEINLINE= ]) 
 endif
 
 ifeq ($(buildtype),windows-x86_64)
-    DEFMOD_TOOLADD([lame],[CFLAGS],[ -DFORCEINLINE= ]) 
+dnl  DEFMOD_TOOLADD([lame],[CFLAGS],[ -DFORCEINLINE= ]) 
 endif
 
 ifeq ($(buildtype),darwin-x86_32)
