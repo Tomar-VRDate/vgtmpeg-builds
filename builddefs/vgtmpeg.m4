@@ -1,4 +1,4 @@
-VGTMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --enable-doc --pkg-config-flags="--static" 
+VGTMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --enable-doc --pkg-config-flags="--static" --pkg-config="pkg-config"
 
 ifeq ($(buildtype),linux-x86_64)
 	VGTMPEG_CONFIGURE_BASE_OPT += --enable-pthreads --arch=x86_64

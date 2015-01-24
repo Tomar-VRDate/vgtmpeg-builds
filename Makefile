@@ -69,6 +69,7 @@ dobuild: $(MYBUILD)
 %_tools:
 	$(eval $(call $*_set_tools)) 
 	env
+	pkg-config --list-all
 	
 
 tags:
