@@ -29,6 +29,12 @@ dobuild: $(MYBUILD)
 %_get: prereq
 	$($*_getcmd)
 
+%_gitclean:
+	set -e; \
+	cd $(srcdir)/$($*_build_basedir); \
+	git clean -df; \
+	cd ../..;
+
 %_clean:
 	set -e; \
 	cd $(srcdir)/$($*_build_basedir); \
