@@ -1,4 +1,4 @@
-VGTMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --enable-doc --pkg-config-flags="--static" --pkg-config="pkg-config"
+VGTMPEG_CONFIGURE_BASE_OPT = --prefix=$(prefix) --enable-doc --pkg-config-flags="--static" --pkg-config="pkg-config" --disable-shared
 
 ifeq ($(buildtype),linux-x86_64)
 	VGTMPEG_CONFIGURE_BASE_OPT += --enable-pthreads --arch=x86_64
@@ -10,12 +10,12 @@ endif
 
 ifeq ($(buildtype),windows-x86_32)
     dnl DPTW32_STATIC_LIB  is needed because it triggers some protocol in pthreads.h (w32) to initialize this on windows
-	VGTMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --extra-cflags=-DPTW32_STATIC_LIB --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=$(tools_prefix) --enable-memalign-hack 
+	VGTMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --extra-cflags="-DPTW32_STATIC_LIB -static-libgcc -static-libstdc++ -static -O3 -s" --extra-ldflags="-static-libgcc -static-libstdc++ -static"   --arch=i386 --enable-cross-compile --target-os=mingw32 --cross-prefix=$(tools_prefix) --enable-memalign-hack 
 dnl    export LIBX264_OPT_LIBS= -lpthreadGC2 
 endif
 
 ifeq ($(buildtype),windows-x86_64)
-	VGTMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --extra-cflags=-DPTW32_STATIC_LIB --arch=x86_64 --enable-cross-compile --target-os=mingw32 --cross-prefix=$(tools_prefix) --enable-memalign-hack 
+	VGTMPEG_CONFIGURE_BASE_OPT +=  --enable-pthreads --extra-cflags="-DPTW32_STATIC_LIB -static-libgcc -static-libstdc++ -static -O3 -s" --extra-ldflags="-static-libgcc -static-libstdc++ -static" --arch=x86_64 --enable-cross-compile --target-os=mingw32 --cross-prefix=$(tools_prefix) --enable-memalign-hack 
 dnl    export LIBX264_OPT_LIBS= -lpthreadGC2 
 endif
 
