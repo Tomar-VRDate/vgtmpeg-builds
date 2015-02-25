@@ -2,7 +2,7 @@ X265_CONFIGURE_BASE_OPT = $(CONFIGURE_BASE_OPT)
 
 
 
-DEFMOD([x265], [HEAD],[x265],[git], [$(NL_GIT_BASE)],,[])
+DEFMOD([x265], [1.5],[x265],[git], [$(NL_GIT_BASE)],,[])
 DEFMOD_MAKECMD([x265], [cd build/linux; $(MAKE)])
 DEFMOD_INSTCMD([x265], [cd build/linux; $(MAKE) install])
 

@@ -9,6 +9,7 @@ include([builddefs/libdvdread.m4])
 include([builddefs/libbluray.m4])
 include([builddefs/xvid.m4])
 include([builddefs/libfaac.m4])
+include([builddefs/ffmpeg.m4])
 
 
 DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )

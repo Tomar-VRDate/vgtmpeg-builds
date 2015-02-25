@@ -56,8 +56,6 @@ DEFMOD([gmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./auto
 DEFMOD_MAKECMD([gmt_dist],[GSTDISTCMD([gmt_dist])])
 DEFMOD_INSTCMD([gmt_dist],[:])
 
-DEFMOD([ffmpeg],[0.5.2],,[svn],[$(SVN_BASE)])
-
 dnl defaults here
 GSTREAMER_PKGS = gstreamer gst_plugins_base gst_plugins_good gst_plugins_bad gst_plugins_ugly gst_ffmpeg
 PKG= gettext glib liboil zlib libogg libvorbis faac $(GSTREAMER_PKGS) nltrans gmt_transcode gmt_dist
