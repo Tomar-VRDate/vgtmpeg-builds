@@ -3,7 +3,7 @@ include([common/buildcfg.mak])
 
 
 RESOURCE_URL_BASE=http://nelalabs.com/res
-SVN_BASE=--username svnuser --password 19761976 http://nelalabs.com/svn/nelapackages
+SVN_BASE="undefined"
 NL_GIT_BASE=ngit@nelalabs.com:
 NL_GIT_BASE_GST=ngit@nelalabs.com:gstreamer/
 NL_GIT_BASE_LIBS=$(NL_GIT_BASE)libs/
