@@ -8,7 +8,7 @@ env:
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y yasm gcc-multilib texinfo texi2html mingw32 mingw-w64 mingw32 mingw32-binutils mingw-w64
+  - sudo apt-get install -y yasm gcc-multilib g++-multilib texinfo texi2html mingw32 mingw-w64 mingw32 mingw32-binutils mingw-w64
 
 script: make buildtype=$BUILDTYPE builddef=$BUILDDEF
 
