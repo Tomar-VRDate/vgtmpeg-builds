@@ -4,10 +4,8 @@ include([common/buildcfg.mak])
 
 RESOURCE_URL_BASE=http://nelalabs.com/res
 SVN_BASE="undefined"
-NL_GIT_BASE=ngit@nelalabs.com:
-NL_GIT_BASE_GST=ngit@nelalabs.com:gstreamer/
-NL_GIT_BASE_LIBS=$(NL_GIT_BASE)libs/
-BB_GIT_BASE=git@bitbucket.org:concalma/
+GH_GIT_BASE=https://github.com/albertovigata/
+BB_GIT_BASE=$(GH_GIT_BASE)
 dnl overrides for bb git hosting
 NL_GIT_BASE=$(BB_GIT_BASE)
 NL_GIT_BASE_GST=$(BB_GIT_BASE)
@@ -27,8 +25,8 @@ DEFMOD([libiconv], [1.13.1],, [tar], [$(RESOURCE_URL_BASE)])
 dnl DEFMOD([libogg], [1.2.0],, [svn], [$(SVN_BASE)])
 dnl DEFMOD([libvorbis], [1.3.1],, [svn], [$(SVN_BASE)])
 
-DEFMOD([libogg], [1.3.0],[libogg], [git],    [$(NL_GIT_BASE_LIBS)],,[--disable-shared])
-DEFMOD([libvorbis], [1.3.2],[libvorbis], [git], [$(NL_GIT_BASE_LIBS)],,[--disable-shared]) 
+DEFMOD([libogg], [1.3.0],[libogg-vgtmpeg], [git],    [$(NL_GIT_BASE_LIBS)],,[--disable-shared])
+DEFMOD([libvorbis], [1.3.2],[libvorbis-vgtmpeg], [git], [$(NL_GIT_BASE_LIBS)],,[--disable-shared]) 
 
 dnl DEFMOD([faac], [1.28],[faac], [git], [$(NL_GIT_BASE)],,[--without-mp4v2])
 DEFMOD([gettext], [0.18.1.1],, [svn], [$(SVN_BASE)])

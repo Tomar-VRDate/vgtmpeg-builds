@@ -28,5 +28,5 @@ ifeq ($(buildtype),darwin-x86_64)
 endif
 
 
-DEFMOD([x264], [HEAD],[x264],[git], [$(NL_GIT_BASE)],,[])
+DEFMOD([x264], [HEAD],[x264-vgtmpeg],[git], [$(NL_GIT_BASE)],,[])
 DEFMOD_COPT([x264],[$(X264_CONFIGURE_BASE_OPT)])

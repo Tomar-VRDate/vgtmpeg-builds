@@ -1,6 +1,6 @@
 LAME_VERSION = master
 LAME_BASE = BB_GIT_BASE
-LAME_SRC_BASE = lame
+LAME_SRC_BASE = lame-vgtmpeg
 LAME_GET_TYPE = git
 LAME_COPT =  $(CONFIGURE_BASE_OPT) --disable-shared --enable-static --disable-frontend --disable-decoder
 

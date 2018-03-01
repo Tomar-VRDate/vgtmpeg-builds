@@ -1,6 +1,6 @@
 LIBBLURAY_VERSION = master
 LIBBLURAY_BASE = BB_GIT_BASE
-LIBBLURAY_SRC_BASE = libbluray
+LIBBLURAY_SRC_BASE = libbluray-vgtmpeg
 LIBBLURAY_GET_TYPE = git
 LIBBLURAY_COPT =  $(CONFIGURE_BASE_OPT) --disable-shared --enable-static --without-libxml2 --without-freetype --disable-examples
 

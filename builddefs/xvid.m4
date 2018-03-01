@@ -1,7 +1,7 @@
 XVID_VERSION = master
 XVID_BASE = BB_GIT_BASE
-XVID_SRC_BASE = xvid
-XVID_BUILD_BASE_DIR = xvid/build/generic
+XVID_SRC_BASE = xvid-vgtmpeg
+XVID_BUILD_BASE_DIR = xvid-vgtmpeg/build/generic
 XVID_GET_TYPE = git
 XVID_COPT =  $(CONFIGURE_BASE_OPT) 
 XVID_STATIC_LIB = 

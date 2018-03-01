@@ -1,8 +1,10 @@
 language: c
 env:
-- BUILDTYPE=linux-x86_32
-- BUILDTYPE=linux-x86_64
-- BUILDDEF=ffgmt
+    global:
+        - BUILDDEF=ffgmt
+    matrix:
+        - BUILDTYPE=linux-x86_32
+        - BUILDTYPE=linux-x86_64
 
 script: make buildtype=$BUILDTYPE builddef=$BUILDDEF
 

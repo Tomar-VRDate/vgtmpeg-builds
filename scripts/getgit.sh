@@ -1,11 +1,11 @@
 #!/bin/sh
 # parameters $base_url, $srcdir, $gitname, $gitver, $cachedir
 
-base_url=$1
-srcdir=$2
-gitname=$3
-gitver=$4
-cachedir=$5
+base_url=$1  #the root of the git repos
+srcdir=$2   #the root of the sources for this build, not including this project
+gitname=$3  #the name of the git repo
+gitver=$4   #version to checkout after clone
+cachedir=$5 #temporary directory where to clone first
 
 set -x 
 set -e; 

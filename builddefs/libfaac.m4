@@ -1,6 +1,6 @@
 FAAC_VERSION = master
 FAAC_BASE = BB_GIT_BASE
-FAAC_SRC_BASE = faac
+FAAC_SRC_BASE = faac-vgtmpeg
 FAAC_GET_TYPE = git
 FAAC_COPT =  $(CONFIGURE_BASE_OPT) --without-mp4v2
 
