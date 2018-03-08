@@ -7,6 +7,8 @@ env:
         - BUILDTYPE=linux-x86_64
 
 before_install:
+  - cpanm XML::Simple
+  - cpanm Switch
   - sudo apt-get -qq update
   - sudo apt-get install -y yasm gcc-multilib g++-multilib texinfo texi2html mingw32 mingw-w64 mingw32 mingw32-binutils mingw-w64
 
