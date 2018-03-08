@@ -15,15 +15,17 @@
     <group name="dummy_group">
     </group>
     <group name="gst_devel">
-        <item type="bin" dest="bindir">vgtmpeg</item>
+        <item type="bin" dest="root">vgtmpeg</item>
         <item type="plain" dest="root">README.md</item>
         <item type="plain" dest="root">CHANGELOG</item>
+        <item type="plain" dest="root">VGTMPEG_CHANGELOG</item>
+        <item type="plain" dest="root">VERSION</item>
     </group>
     <deploy> 
         <dgroup>gst_devel</dgroup>
     </deploy>
     <options>
-        <tardist nbundle="off" tar="on" sevenzip="on" gzip="off" bzip2="off" >gmt-gstdist</tardist> 
+        <tardist nbundle="off" tar="off" sevenzip="off" gzip="off" bzip2="off" sevenzip_standalone="on" >vgtmpeg_%%VERSION%%</tardist> 
         <cleanfirst/>
         <keeptemp/> 
     </options>

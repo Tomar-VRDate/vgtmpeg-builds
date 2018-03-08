@@ -13,7 +13,7 @@ include([builddefs/ffmpeg.m4])
 
 
 DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )
-DEFMOD_MAKECMD([ffgmt_dist],[GSTDISTCMD([ffgmt_dist],[ffgmt_dist])])
+DEFMOD_MAKECMD([ffgmt_dist],[GSTDISTCMD([vgtmpeg_release],[ffgmt_dist])])
 DEFMOD_INSTCMD([ffgmt_dist],[:])
 
 opt = --enable-gpl --enable-nonfree --disable-shared --disable-indevs --disable-outdevs
@@ -54,8 +54,6 @@ ifeq ($(buildtype),windows-x86_64)
     PKG = pthreads-w32
 endif
 
-PKG += xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 faac vgtmpeg 
-
-dnl ffgmt_dist
+PKG += xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 faac vgtmpeg ffgmt_dist
 
 
