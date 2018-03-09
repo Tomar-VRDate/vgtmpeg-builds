@@ -5,6 +5,8 @@ env:
     matrix:
         - BUILDTYPE=linux-x86_32
         - BUILDTYPE=linux-x86_64
+        - BUILDTYPE=windows-x86_64
+        - BUILDTYPE=windows-x86_32
 
 before_install:
   - sudo apt-get -qq update
