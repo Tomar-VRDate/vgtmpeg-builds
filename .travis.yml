@@ -8,7 +8,7 @@ env:
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y p7zip-full chrpath libswitch-perl libxml-simple-perl yasm gcc-multilib g++-multilib texinfo texi2html mingw32 mingw-w64 mingw32 mingw32-binutils mingw-w64
+  - sudo apt-get install -y p7zip p7zip-full chrpath libswitch-perl libxml-simple-perl yasm gcc-multilib g++-multilib texinfo texi2html mingw32 mingw-w64 mingw32 mingw32-binutils mingw-w64
 
 install:
 
