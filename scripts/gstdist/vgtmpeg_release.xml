@@ -25,7 +25,7 @@
         <dgroup>gst_devel</dgroup>
     </deploy>
     <options>
-        <tardist nbundle="off" tar="off" sevenzip="off" gzip="off" bzip2="off" sevenzip_standalone="on" >vgtmpeg_%%VERSION%%</tardist> 
+        <tardist nbundle="off" tar="off" sevenzip="off" ftpupload="on" gzip="off" bzip2="off" sevenzip_standalone="on" >vgtmpeg_%%VERSION%%</tardist> 
         <cleanfirst/>
         <keeptemp/> 
     </options>
