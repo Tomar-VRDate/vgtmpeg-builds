@@ -8,7 +8,6 @@ include([builddefs/lame.m4])
 include([builddefs/libdvdread.m4])
 include([builddefs/libbluray.m4])
 include([builddefs/xvid.m4])
-include([builddefs/libfaac.m4])
 include([builddefs/ffmpeg.m4])
 
 
@@ -24,7 +23,6 @@ opt += --disable-network
 # enable encoders
 opt += --enable-libvpx --enable-encoder=libvpx_vp8 
 opt += --enable-libxvid --enable-encoder=libxvid
-opt += --enable-libfaac --enable-encoder=libfaac 
 opt += --enable-libx264 --enable-encoder=libx264 
 opt += --enable-libx265 --enable-encoder=libx265 
 opt += --enable-libvorbis --enable-encoder=libvorbis --disable-encoder=vorbis
@@ -54,6 +52,6 @@ ifeq ($(buildtype),windows-x86_64)
     PKG = pthreads-w32
 endif
 
-PKG += xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 faac vgtmpeg ffgmt_dist
+PKG += xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 vgtmpeg ffgmt_dist
 
 
