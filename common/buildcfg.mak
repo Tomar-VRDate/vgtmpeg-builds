@@ -119,8 +119,8 @@ ifeq ($(buildtype),darwin-x86_64)
 endif
 
 #common exports across platforms
-CONFIGURE_BASE_OPT= --prefix=$(prefix) --build=$(build) --host=$(host)
-
+CONFIGURE_BASE_OPT=  --prefix=$(prefix) --build=$(build) --host=$(host)
+COMMON_PKG_CONFIG_SYSROOT_DIR=$(prefix)
 COMMON_PKG_CONFIG_LIBDIR=${prefix}/lib/pkgconfig/
 COMMON_PKG_CONFIG_PATH=${COMMON_PKG_CONFIG_LIBDIR}
 COMMON_CFLAGS= ${coptflags}  -I${prefix}/include  $(CFLAGS_ADD)

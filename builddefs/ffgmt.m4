@@ -9,6 +9,7 @@ include([builddefs/libdvdread.m4])
 include([builddefs/libbluray.m4])
 include([builddefs/xvid.m4])
 include([builddefs/ffmpeg.m4])
+include([builddefs/fdk-aac.m4])
 
 
 DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )
@@ -21,6 +22,7 @@ opt += --disable-network
 #opt += --disable-muxers
 
 # enable encoders
+opt += --enable-libfdk-aac --enable-encoder=libfdk_aac
 opt += --enable-libvpx --enable-encoder=libvpx_vp8 
 opt += --enable-libxvid --enable-encoder=libxvid
 opt += --enable-libx264 --enable-encoder=libx264 
@@ -52,6 +54,6 @@ ifeq ($(buildtype),windows-x86_64)
     PKG = pthreads-w32
 endif
 
-PKG += xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 vgtmpeg ffgmt_dist
+PKG += fdk-aac xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 vgtmpeg ffgmt_dist
 
 

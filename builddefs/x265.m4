@@ -2,7 +2,7 @@ X265_CONFIGURE_BASE_OPT = $(CONFIGURE_BASE_OPT)
 
 
 
-DEFMOD([x265], [1.5],[x265-vgtmpeg],[git], [$(NL_GIT_BASE)],,[])
+DEFMOD([x265], [2.7],[x265-vgtmpeg],[git], [$(NL_GIT_BASE)],,[])
 DEFMOD_MAKECMD([x265], [cd build/linux; $(MAKE)])
 DEFMOD_INSTCMD([x265], [cd build/linux; $(MAKE) install])
 
@@ -12,6 +12,7 @@ CMAKE_DEFS += -DCMAKE_CXX_COMPILER=$(CXX)
 CMAKE_DEFS += -DCMAKE_SHARED_LIBRARY_LINK_C_FLAGS=""
 CMAKE_DEFS += -DCMAKE_SHARED_LIBRARY_LINK_CPP_FLAGS=""
 CMAKE_DEFS += -DENABLE_SHARED:BOOL=OFF -DENABLE_CLI:BOOL=ON
+CMAKE_DEFS += -DNASM_EXECUTABLE=`which nasm`
 
 
 ifeq ($(buildtype),linux-x86_64)
@@ -50,6 +51,6 @@ endif
 
 ifeq ($(buildtype),darwin-x86_64)
 	X265_CONFIGURE_BASE_OPT += 
-    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS)  -DCMAKE_OSX_ARCHITECTURES:STRING=x86_64 -g "Unix Makefiles" ../../source])
+    DEFMOD_CONF_CMD([x265], [cd build/linux; cmake $(CMAKE_DEFS)  -DCMAKE_OSX_ARCHITECTURES:STRING=x86_64 -DENABLE_ASSEMBLY:BOOL=ON -g "Unix Makefiles" ../../source])
 endif
 DEFMOD_COPT([x265],[ ])
