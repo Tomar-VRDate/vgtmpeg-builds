@@ -4,7 +4,7 @@ include([common/buildcfg.mak])
 
 RESOURCE_URL_BASE=http://nelalabs.com/res
 SVN_BASE="undefined"
-GH_GIT_BASE=https://github.com/albertovigata/
+GH_GIT_BASE=https://github.com/albertopv/
 BB_GIT_BASE=$(GH_GIT_BASE)
 dnl overrides for bb git hosting
 NL_GIT_BASE=$(BB_GIT_BASE)
