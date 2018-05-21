@@ -1,4 +1,4 @@
-X264_CONFIGURE_BASE_OPT = $(CONFIGURE_BASE_OPT) --enable-shared --enable-static  --disable-cli --disable-lavf
+X264_CONFIGURE_BASE_OPT = $(CONFIGURE_BASE_OPT)  --enable-static  --disable-cli --disable-lavf
 
 ifeq ($(buildtype),linux-x86_64)
 	X264_CONFIGURE_BASE_OPT +=  
