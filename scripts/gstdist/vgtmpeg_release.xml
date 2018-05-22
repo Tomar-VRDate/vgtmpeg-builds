@@ -17,7 +17,7 @@
     <group name="gst_devel">
         <item type="bin" dest="root">vgtmpeg</item>
         <item type="plain" dest="root">README.md</item>
-        <item type="plain" dest="root">CHANGELOG</item>
+        <item type="plain" dest="root">Changelog</item>
         <item type="plain" dest="root">VGTMPEG_CHANGELOG</item>
         <item type="plain" dest="root">VERSION</item>
     </group>
