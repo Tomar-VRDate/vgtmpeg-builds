@@ -54,6 +54,6 @@ ifeq ($(buildtype),windows-x86_64)
  dnl   PKG = pthreads-w32
 endif
 
-PKG += fdk-aac xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 vgtmpeg ffgmt_dist
+PKG += fdk-aac xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 vgtmpeg 
 
 
