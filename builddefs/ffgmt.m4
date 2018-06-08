@@ -10,6 +10,7 @@ include([builddefs/libbluray.m4])
 include([builddefs/xvid.m4])
 include([builddefs/ffmpeg.m4])
 include([builddefs/fdk-aac.m4])
+include([builddefs/libopus.m4])
 
 
 DEFMOD([ffgmt_dist], [HEAD], [gst_dist_builder], [git], [$(NL_GIT_BASE)],,,[./autogen.sh] )
@@ -30,6 +31,7 @@ opt += --enable-libx265 --enable-encoder=libx265
 opt += --enable-libvorbis --enable-encoder=libvorbis --disable-encoder=vorbis
 opt += --enable-encoder=mpeg4
 opt += --enable-libmp3lame --enable-encoder=libmp3lame
+opt += --enable-libopus --enable-encoder=libopus --enable-decoder=libopus
 
 # enable protocols
 opt += --enable-protocol=bluray --enable-libbluray
@@ -54,6 +56,6 @@ ifeq ($(buildtype),windows-x86_64)
  dnl   PKG = pthreads-w32
 endif
 
-PKG += fdk-aac xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 vgtmpeg 
+PKG += opus fdk-aac xvid libbluray libdvdread lame libogg libvorbis libvpx x264 x265 vgtmpeg 
 
 

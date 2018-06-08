@@ -2,7 +2,7 @@ LIBDVDREAD_VERSION = master
 LIBDVDREAD_BASE = BB_GIT_BASE
 LIBDVDREAD_SRC_BASE = libdvdread-vgtmpeg
 LIBDVDREAD_GET_TYPE = git
-LIBDVDREAD_COPT =  $(CONFIGURE_BASE_OPT) --enable-shared --enable-static 
+LIBDVDREAD_COPT =  $(CONFIGURE_BASE_OPT) --disable-shared --enable-static 
 
 ifeq ($(buildtype),linux-x86_64)
 endif
